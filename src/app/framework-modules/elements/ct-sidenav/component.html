@@ -1,0 +1,12 @@
+<div class="main-div">
+    <div class="name-container" *ngFor="let item of items; let i=index">
+        <div *ngIf="item[1]">
+            <span
+                [ngStyle]="{'border-left':defaultSelected==item[0] ?  '4px solid #ec8026' : '', 'padding-left':defaultSelected==item[0] ? '1.25rem' : '1.5rem'}"
+                [ngClass]="{'item-selected':defaultSelected==item[0], 'item-unselected':defaultSelected!=item[0]}"
+                >
+                {{item[0]}}
+            </span>
+        </div>
+    </div>
+</div>

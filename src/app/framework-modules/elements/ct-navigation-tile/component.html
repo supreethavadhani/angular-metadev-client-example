@@ -1,0 +1,5 @@
+<div [ngStyle]="{'color':selected ? '#084fa9': '#545454'}"  class='tile-unselected'>
+    <img *ngIf="selected" style="margin-top:0.625rem" src="{{imageSelected}}">
+    <img *ngIf="!selected" style="margin-top:0.625rem" src="{{imageUnselected}}">
+    <h6 class='name' >{{name}}</h6>
+</div>

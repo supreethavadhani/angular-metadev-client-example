@@ -1,0 +1,26 @@
+.data-panel{
+    min-height: 28.9375rem !important;
+    overflow: auto;
+}
+
+
+.bottom-panel{
+    padding: 0.625rem 0;
+}
+
+.blue-line{
+    margin: 0 2rem;
+    border-top: 1px solid #004FAA;
+}
+
+.stick-to-bottom{
+    position: relative;
+}
+
+.back-panel{
+    ::ng-deep .mat-figure{
+        justify-content: flex-start;
+    }
+    justify-content: flex-start !important;
+    margin-left: 2rem;
+}

@@ -1,0 +1,57 @@
+:host ::ng-deep .mat-button-toggle {
+    border: 1px solid #e7eced !important;
+    border-radius: 4px;
+    margin-left: 3px;
+    margin-right: 3px;
+    min-width: 30px;
+    font-family: Roboto-Light !important;
+    font-size: 14px;
+    outline: none !important;
+}
+
+:host ::ng-deep .mat-button-toggle-group:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+:host ::ng-deep .mat-button-toggle-group {
+    background: transparent;
+    border: none;
+    outline: none !important;
+}
+
+:host ::ng-deep .mat-button-toggle-button:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+:host ::ng-deep .mat-button-toggle-button {
+    outline: none !important;
+    min-width: 30px;
+    border: none !important;
+}
+
+:host ::ng-deep .mat-button-toggle-checked {
+    background: #2450a0;
+    min-width: 30px;
+    border: 1px solid #2450a0 !important;
+    .mat-button-toggle-label-content {
+        color: white;
+    }
+}
+
+:host ::ng-deep .mat-button-toggle-group {
+    background: transparent;
+    border: none;
+    outline: none !important;
+}
+
+:host ::ng-deep .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 0px !important;
+}
+
+:host ::ng-deep .mat-button-toggle-disabled{
+    background-color: #2450a0;
+    color: white;
+    border: 1px solid #2450a0 !important;
+}

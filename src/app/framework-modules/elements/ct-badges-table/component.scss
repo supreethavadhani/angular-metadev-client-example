@@ -1,0 +1,73 @@
+.table-container {
+    height: 18.75rem;
+    overflow: auto;
+    padding-left:2rem;
+    padding-right: 1rem;
+    margin-right:1.875rem;
+  }
+  table {
+    width: 100%;
+   
+  }
+  tr.mat-header-row {
+    height: 3.125rem;
+    font-weight: bold;
+  }
+  th{
+    height: 3.125rem;
+    font-family: Roboto-Medium !important;
+    font-size:1.1vw;
+    color: rgba(150,150,150,0.9);
+    border-bottom: none !important;
+  }
+  td{
+    height: 3.125rem;
+    cursor: pointer;
+    border-bottom:1px dashed #e0e0e0!important;
+    font-size: 0.937vw;
+    color: rgba(0,0,0,.6);
+  }
+  
+  .edit{
+    font-size: 0.937;
+    font-weight: 500;
+    color: #004faa;
+  }
+  
+  
+  :host ::ng-deep .mat-standard-chip{
+    min-height: 26px !important;
+  }
+  
+  .table-container::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .table-container::-webkit-scrollbar-track {
+    background: #fff; 
+  }
+   
+  /* Handle */
+  .table-container::-webkit-scrollbar-thumb {
+    background: #ddd; 
+    border-radius: 500px;
+    visibility: hidden;
+  }
+  
+  // /* Handle on hover */
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #ddd; 
+    visibility: visible;
+  }
+  
+  
+  .first-column{
+    margin-left: 2rem;
+    color: #004faa;
+    font-family: Roboto-Medium !important;
+  }
+  
+  :host ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0 !important;
+  }

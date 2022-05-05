@@ -1,0 +1,88 @@
+@import '../../../../../sass/variables';
+
+
+  .background{
+    // background-image: url('src/assets/images/login_bg.png');
+    height: 100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .powered{
+    font-family: Roboto-Light;
+    font-size:0.78vw;
+    color: #FFFFFF;
+    padding-top: 1.6875rem;
+    padding-right: 1.875vw;
+  }
+
+.logo{
+    padding-top:5.625rem;
+    padding-right:12.5vw;
+}
+.logo img{
+    height: 9.625rem;
+    width: 10.625vw;
+}
+
+.username{
+  margin-left:70.57vw;
+  margin-right:7.26vw;
+  padding-top:3.74vh;
+}
+.password{
+  margin-left:70.57vw;
+  margin-right:7.26vw;
+  padding-top:3vh;
+}
+
+.forgot-password{
+  padding-top: 0.625rem;
+  cursor: pointer;
+  padding-right:7.26vw;
+  font-family: Roboto-Regular;
+  font-size: 0.625rem;
+  color: #89E3FD;
+  line-height: 1.375rem;
+  text-decoration: underline;
+}
+
+.login-button{
+  padding-top:1.6875rem;
+  padding-left:85.54vw;
+}
+ .apply-admission{
+  border: 1px solid #EC8026;
+  border-radius: 5px 0 5px 0;
+  background: none;
+  font-family: Roboto-Regular;
+  font-size: 12px;
+  color: white;
+  width: 11.95vw;
+  float:right;
+  margin-bottom:4.58vh;
+  margin-top:14.6vh;
+  margin-right:7.26vw;
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+ }
+
+
+ .banner{
+  height: 10vh; 
+  position: fixed;
+  z-index: 1000; 
+  top: 20vh; 
+  padding:1vh;
+  color: white; 
+  text-align: center;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.heading-1{
+  font-size: 2rem;
+  font-family: "Roboto-Thin" !important;
+}

@@ -1,0 +1,82 @@
+
+import { Form , Field, ChildForm } from '../form/form';
+import { FormData } from '../form/formData';
+import { SelectOption, Vo } from '../form/types';
+import { Validators } from '@angular/forms'
+import { ServiceAgent} from '../form/serviceAgent';
+
+export class CustomerForm extends Form {
+	private static _instance = new CustomerForm();
+	name:Field = {
+		name:'name'
+		,controlType: 'Input'
+		,label: 'Customer Name'
+		,isRequired: true
+		,valueType: 0
+		,errorId: 'invalidName'
+		,maxLength: 150
+	};
+	email:Field = {
+		name:'email'
+		,controlType: 'Input'
+		,label: 'email'
+		,isRequired: true
+		,valueType: 0
+		,errorId: 'invalidEmail'
+		,maxLength: 1000
+	};
+	addressLine1:Field = {
+		name:'addressLine1'
+		,controlType: 'Input'
+		,label: 'Address Line 1'
+		,valueType: 0
+		,errorId: 'invalidText'
+		,maxLength: 1000
+	};
+
+	public static getInstance(): CustomerForm {
+		return CustomerForm._instance;
+	}
+
+	constructor() {
+		super();
+		this.serveGuests = true;
+		this.fields = new Map();
+		this.controls = new Map();
+		this.controls.set('name', [Validators.required, Validators.maxLength(150)]);
+		this.fields.set('name', this.name);
+		this.controls.set('email', [Validators.required, Validators.email, Validators.maxLength(1000)]);
+		this.fields.set('email', this.email);
+		this.controls.set('addressLine1', [Validators.maxLength(1000)]);
+		this.fields.set('addressLine1', this.addressLine1);
+		this.opsAllowed = {create: true};
+		this.keyFields = ["customerId"];
+	}
+
+	public getName(): string {
+		 return 'customer';
+	}
+}
+
+
+export class CustomerFd extends FormData {
+	constructor(form: CustomerForm, sa: ServiceAgent) {
+		super(form, sa);
+	}
+
+	setFieldValue(name: 'name' | 'email' | 'addressLine1', value: string | number | boolean | null ): void {
+		super.setFieldValue(name, value);
+	}
+
+	getFieldValue(name: 'name' | 'email' | 'addressLine1' ): string | number | boolean | null {
+		return super.getFieldValue(name);
+	}
+}
+
+
+export interface CustomerVo extends Vo {
+	customerId?: number, 
+	name?: string, 
+	addressLine1?: string, 
+	email?: string
+}

@@ -1,0 +1,127 @@
+@import './sass/variables';
+
+@font-face {
+    font-family: "Roboto-Black";
+    src: url("./assets/fonts/Roboto/Roboto-BlackItalic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("./assets/fonts/Roboto/Roboto-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-BoldItalic";
+    src: url("./assets/fonts/Roboto/Roboto-BoldItalic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Italic";
+    src: url("./assets/fonts/Roboto/Roboto-Italic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("./assets/fonts/Roboto/Roboto-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-LightItalic";
+    src: url("./assets/fonts/Roboto/Roboto-LightItalic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("./assets/fonts/Roboto/Roboto-Medium.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-MediumItalic";
+    src: url("./assets/fonts/Roboto/Roboto-MediumItalic.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("./assets/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: url("./assets/fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto-ThinItalic";
+    src: url("./assets/fonts/Roboto/Roboto-ThinItalic.ttf") format('truetype');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+label {
+    font-family: 'Roboto-Regular';
+    font-weight: 700;
+}
+
+body{
+    font-family: 'Roboto-Regular';
+    background-color: #f3f8fb;
+}
+
+.snackbar-success{
+    background:white;
+    color:black;
+    font-style: italic;
+    position: fixed;
+    font-family: Roboto-Light;
+    top:25vh;
+    height:8vh;
+    font-weight:50 !important;
+    right:0;
+    padding:0;
+    margin:0;
+    border-left:4px solid #0BD728;
+    font-size:2vw;
+}
+
+.snackbar-error{
+    background:white;
+    color:black;
+    font-style: italic;
+    position: fixed;
+    font-family: Roboto-Light;
+    top:25vh;
+    height:8vh;
+    font-weight:50 !important;
+    right:0;
+    padding:0;
+    margin:0;
+    border-left:4px solid #E52423;
+    font-size:2vw;
+}
+
+.snackbar-info{
+    background:white;
+    color:black;
+    font-style: italic;
+    position: fixed;
+    font-family: Roboto-Light;
+    top:25vh;
+    height:8vh;
+    font-weight:50 !important;
+    right:0;
+    padding:0;
+    margin:0;
+    border-left:4px solid #62B1F2;
+    font-size:2vw;
+}
+
+
+g.line-chart > g:last-of-type > g:nth-child(n) g.line-series > path {
+    stroke-width: 4;
+}

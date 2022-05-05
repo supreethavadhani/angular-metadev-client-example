@@ -1,0 +1,13 @@
+<div style="border-bottom:3px solid #f3f8fb; padding-bottom: 0.6125rem; margin-bottom: 1rem">
+	<img style="padding-left:2.1875rem; margin-right: 0.9375rem;" src="../../../../assets/images/Serach.svg">
+    <mat-form-field appearance="none" style="width: 80%;">
+        <mat-chip-list #chipList aria-label=" selection ">
+            <mat-chip color="primary" selected="true" *ngFor="let value of values "  [removable]=true (removed)="remove(value) ">
+                {{value}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input style="width:100%; font-family: Roboto-Light;font-size: 0.8333vw;"  placeholder="{{placeholder}}" (keyup)="applyFilter($event.target.value) " [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"  (matChipInputTokenEnd)="add($event)"
+            />
+        </mat-chip-list>
+    </mat-form-field>
+</div>

@@ -1,0 +1,24 @@
+<ngx-charts-bar-vertical
+  [results]="data"
+  [view]="_chartMetaData.view"
+  [scheme]="_chartMetaData.scheme"
+  [gradient]="_chartMetaData.gradient"
+  [xAxis]="_chartMetaData.showXAxis"
+  [yAxis]="_chartMetaData.showYAxis"
+  [legend]="_chartMetaData.showLegend"
+  [showXAxisLabel]="_chartMetaData.showXAxisLabel"
+  [showYAxisLabel]="_chartMetaData.showYAxisLabel"
+  [xAxisLabel]="_chartMetaData.xAxisLabel"
+  [yAxisLabel]="_chartMetaData.yAxisLabel"
+  [showDataLabel]="_chartMetaData.dataLabel"
+  (select)="onSelect($event)">
+  <ng-template #tooltipTemplate let-model="model">
+    <div *ngIf="_chartMetaData.customToolTip; else normal" >
+      {{ getToolTip(model.name) }}
+    </div>
+    <ng-template #normal>
+      <span>{{ model.name }}</span>
+      <h6>{{ model.value }}</h6>
+    </ng-template>
+  </ng-template>
+</ngx-charts-bar-vertical>

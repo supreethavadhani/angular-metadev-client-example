@@ -1,0 +1,51 @@
+ <div *ngIf="tableData.metaData.search" style="border-bottom:3px solid #f3f8fb; padding-bottom: 0.6125rem;">
+	<img (click)="toggleDropdown()" style="padding-left:2.1875rem; margin-right: 0.9375rem;" src="../../../../assets/images/Serach.svg">
+	<div ngbDropdownMenu [ngClass]="dropdownShow==true? 'show': 'hide'" class="dropdown-menu autoClose" aria-labelledby="dropdown01">
+		<mat-checkbox 
+			class="dropdown-item" 
+			*ngFor="let column of columns"
+			(change)="changeFilter(column)"
+			[checked]="true">
+			{{tableData.metaData.display_names[column]}}
+		</mat-checkbox>
+		<span class="dropdown-item" style="text-align: center;cursor: pointer; color: #004FAA;font-family: Roboto-Medium !important;font-size: 0.875rem;" (click)="toggleDropdown()">DONE</span>
+	</div>
+    <mat-form-field appearance="none" style="width: 80%;">
+		
+        <mat-chip-list #chipList aria-label=" selection ">
+            <mat-chip color="primary" selected="true" *ngFor="let value of values " [removable]=true (removed)="remove(value) ">
+                {{value}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input style="width:100%; font-family: Roboto-Light;font-size: 0.8333vw;"  placeholder="{{tableData.metaData.placeholder}}" (keyup)="applyFilter($event.target.value) " [matChipInputFor]="chipList " [matChipInputSeparatorKeyCodes]="separatorKeysCodes " (matChipInputTokenEnd)="add($event)"
+            />
+        </mat-chip-list>
+	</mat-form-field>
+	<span style="font-family:'Roboto-Light'; font-size: 0.8rem;color: rgba(0,0,0,0.6);">Total Items: {{dataSource.filteredData.length}}</span>
+</div>
+<div class="table-container" id="tableContainer">
+<table mat-table [dataSource]="dataSource" matSort>
+
+
+		<ng-container *ngFor="let i of tableData.metaData.column_names; let index=index" matColumnDef="{{i}}">
+
+				<ng-container *ngIf="i=='edit'; else dataPart">
+					<th mat-header-cell *matHeaderCellDef >
+
+					</th>
+					<td style="padding-right: 14px;" mat-cell *matCellDef="let element;let rowData=$implicit;" class="edit" align="end" (click)="fetchRowNumberEdit(rowData)"><button style="outline: none;" mat-button>{{tableData.metaData.buttonName}}</button></td>
+				</ng-container>
+
+				<ng-template #dataPart>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>
+						{{tableData.metaData.display_names[i]}}
+					</th>
+					<td (click)="fetchRowNumberView(rowData)" [ngStyle]="getStyle(i, element[i], rowData)" [ngClass]="{'first-column': index==0}" mat-cell *matCellDef="let element;let rowData=$implicit;">{{element[i]}}</td>
+				</ng-template>
+				
+		</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef=" tableData.metaData.column_names;sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableData.metaData.column_names;"></tr>
+</table>
+</div>

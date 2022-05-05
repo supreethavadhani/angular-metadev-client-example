@@ -1,0 +1,16 @@
+<ngx-charts-line-chart
+  [results]="data"
+  [view]="_chartMetaData.view"
+  [scheme]="_chartMetaData.scheme"
+  [gradient]="_chartMetaData.gradient"
+  [xAxis]="_chartMetaData.showXAxis"
+  [yAxis]="_chartMetaData.showYAxis"
+  [legend]="_chartMetaData.showLegend"
+  [showXAxisLabel]="_chartMetaData.showXAxisLabel"
+  [showYAxisLabel]="_chartMetaData.showYAxisLabel"
+  [xAxisLabel]="_chartMetaData.xAxisLabel"
+  [yAxisLabel]="_chartMetaData.yAxisLabel"
+  [yScaleMax]="_chartMetaData.yScaleMax"
+  (select)="onSelect($event)"
+  legendPosition="below">
+</ngx-charts-line-chart>

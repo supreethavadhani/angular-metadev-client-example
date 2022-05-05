@@ -1,0 +1,48 @@
+<div class="toolbar" style="margin: 0;padding: 0;">
+
+	<div class="row col-md-12" style="margin: 0;padding-right:2rem;padding-left: 1.35rem;">
+		<!-- Trust Icon & Name -->
+		<div style="width: 25%;">
+			<div class="row" style="margin: 0;padding: 0; margin-top: 0.39rem">
+				<img src="../../../../assets/images/bms.png">
+				<h6 class='trust-heading'>B.M.S College Of Engineering</h6>
+			</div>
+		</div>
+
+		<!-- Actions -->
+		<div class="icons" style="width: 75%;" align="end">
+			<!-- <div ngbDropdown class="d-inline-block">
+				<button class="btn btn-outline-primary" id="dropdownBasic1" >Toggle dropdown</button>
+				<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+				  <button ngbDropdownItem>Action - 1</button>
+				  <button ngbDropdownItem>Another Action</button>
+				  <button ngbDropdownItem>Something else is here</button>
+				</div>
+			</div> -->
+			<div class="dropdown" style="float:right;">
+				<mat-icon class='action-icon dropbtn'>person</mat-icon>
+				<div class="dropdown-content">
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;"><b>{{userName}}</b></a>
+					<a class="dropdown-item" style="font-size:12px;color:#004faa;font-weight:200;">{{loginId}}</a>
+					<hr>
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;" (click)="changeSeason()">Change Season</a>
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;" >Reset Password</a>
+					<hr>
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;" (click)="doLogout()">Logout</a>
+				</div>
+			</div>
+			<!-- <div ngbDropdown>
+				<mat-icon ngbDropdownToggle class='action-icon'>person</mat-icon>
+				<div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;"><b>{{userName}}</b></a>
+					<a class="dropdown-item" style="font-size:12px;color:#004faa;font-weight:200;">{{loginId}}</a>
+					<hr>
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;" (click)="changeSeason()">Change Season</a>
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;" (click)="resetPassword()">Reset Password</a>
+					<hr>
+					<a class="dropdown-item" style="font-size: 14px;font-weight:1000;" (click)="doLogout()">Logout</a>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>

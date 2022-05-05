@@ -1,0 +1,41 @@
+@import '../../../../sass/variables';
+
+
+:host ::ng-deep .mat-form-field-infix{
+  font-family: Roboto-Medium;
+  font-size: 14px;
+  color: rgba(0,0,0,0.54);
+  letter-spacing: 0;
+  padding:0;
+}
+
+:host ::ng-deep  .mat-form-field-appearance-fill .mat-form-field-flex {
+  background: #F8F8F8 !important;
+  padding:8px 4px 3px 14px !important;
+  height: 5.5vh;
+}
+
+:host ::ng-deep .mat-form-field-label {
+  font-family: Roboto-Regular;
+  font-size: 12px;
+  color: black;
+  letter-spacing: 0;
+  opacity: 0.54;
+  padding-bottom: 2px !important;
+}
+
+:host ::ng-deep .mat-form-field .mat-focused .mat-form-field-label {
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: #004FAA;
+    letter-spacing: 0;
+    opacity: 1;
+}
+
+:host ::ng-deep .mat-input-element::placeholder{
+  opacity: 0.34;
+}
+
+.optional{
+  font-style: italic;
+}

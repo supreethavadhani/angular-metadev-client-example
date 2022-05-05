@@ -1,0 +1,12 @@
+
+<mat-form-field class="col" appearance="fill">
+	<mat-label>{{field.label}}</mat-label>
+	<span matPrefix>{{field.prefix}}</span>
+		<input [type]="type" [formControl]="control" matInput (input)="valueChangeDetector($event)" [required]="field.isRequired" [readonly]="field.isEditable" placeholder="{{field.placeHolder}}" >
+		<mat-hint>{{field.hint}}</mat-hint>
+		<mat-icon matSuffix>{{field.icon}}</mat-icon>
+		<mat-error>{{field.errorId}}</mat-error>
+</mat-form-field>
+
+
+

@@ -1,0 +1,15 @@
+<!-- Module Navigator -->
+
+<div class="browse">BROWSE BY</div>
+
+<div class='navigation-card'>
+  <div class="d-flex flex-row">
+    <mat-card (click)="navigationEmitter(module.moduleName)" class="p-2 tile-card" style="margin: 0 0.5rem; width: 6rem;" [ngClass]="{'tile-selected': selected==module.moduleName}" *ngFor='let module of modules; let i=index' >
+      <div class='tile-unselected'>
+        <ct-navigation-tile [selected]="selected==module.moduleName"  imageSelected="{{module.moduleIconSelected}}" imageUnselected="{{module.moduleIconUnselected}}" name="{{module.moduleName}}"></ct-navigation-tile>
+        <!-- <div *ngIf='selected == module.moduleName' class="triangle-with-shadow"></div> -->
+      </div>
+    </mat-card>
+  </div>
+</div>
+

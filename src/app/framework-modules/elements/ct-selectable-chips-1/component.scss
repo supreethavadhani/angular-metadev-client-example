@@ -1,0 +1,17 @@
+:host ::ng-deep .mat-standard-chip{
+  min-height: 22px !important;
+  font-family: Roboto-Light;
+  font-size:10px;
+  border-radius: 0;
+}
+
+:host ::ng-deep .mat-chip{
+  background-color:transparent;
+  border-radius: 4px;
+  border: 1px solid #e7eced !important;
+  color:black;
+}
+
+:host ::ng-deep .mat-chip-selected{
+  border: 1px solid #2450a0 !important;
+}

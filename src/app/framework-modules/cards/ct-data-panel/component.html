@@ -1,0 +1,11 @@
+<div class="data-panel">
+    <ng-content select="[data]"></ng-content>
+</div>
+<div [hidden]="isPanelHidden" class="blue-line"></div>
+<div [hidden]="isPanelHidden" class="bottom-panel">
+    <mat-grid-list cols="3" rowHeight="8:1">
+        <mat-grid-tile class="back-panel"><ng-content select="[bottomLeftPanel]"></ng-content></mat-grid-tile>
+        <mat-grid-tile><ng-content select="[bottomMidPanel]"></ng-content></mat-grid-tile>
+        <mat-grid-tile><ng-content select="[bottomRightPanel]"></ng-content></mat-grid-tile>
+    </mat-grid-list>
+</div>
