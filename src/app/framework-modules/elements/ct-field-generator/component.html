@@ -1,0 +1,8 @@
+<mat-card class="col-6" style="padding: auto; margin:auto">
+	<h5>
+		Customer Form
+	</h5>
+	<div *ngFor="let field of fields | keyvalue">
+		<ct-textbox [field]="form[field.key]" [fd]="fd"></ct-textbox>
+	</div>
+</mat-card>
