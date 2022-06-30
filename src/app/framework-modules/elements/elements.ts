@@ -228,7 +228,8 @@ import { CTFieldGenerator } from './ct-field-generator/component';
         
     ]
 })
-  export class ElementsModule {
+  
+export class ElementsModule {
     constructor() {
     }
   }
