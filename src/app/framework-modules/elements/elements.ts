@@ -66,15 +66,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CtLinearGaugeComponent } from './ct-linear-gauge/component';
 import { CtHorizontalBarChartComponent } from './ct-horizontal-barchart/component';
-import { CTFieldGen } from './ct-field-generator/component';
-
-
-
-
-
-
-
-
+import { CTFieldGenerator } from './ct-field-generator/component';
 
 @NgModule({
     declarations: [
@@ -122,7 +114,7 @@ import { CTFieldGen } from './ct-field-generator/component';
         CtNumberCardComponent,
         CtLinearGaugeComponent,
         CtHorizontalBarChartComponent,
-        CTFieldGen
+        CTFieldGenerator
     ],
     imports: [
         /**
@@ -226,7 +218,7 @@ import { CTFieldGen } from './ct-field-generator/component';
         CtNumberCardComponent,
         CtLinearGaugeComponent,
         CtHorizontalBarChartComponent,
-        CTFieldGen,
+        CTFieldGenerator,
         /**
          * Miscellaneous Exports
          */
