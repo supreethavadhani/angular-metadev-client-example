@@ -22,7 +22,7 @@ export class CTFieldGenerator {
 	
 	ngOnInit() {
 		this.form = this.fd.form;
-		this.fields = this.fd.form.fields; 
+		this.fields = this.fd.form.fields;
 	}
 }
 

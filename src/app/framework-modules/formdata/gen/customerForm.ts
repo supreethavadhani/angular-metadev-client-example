@@ -7,6 +7,15 @@ import { ServiceAgent} from '../form/serviceAgent';
 
 export class CustomerForm extends Form {
 	private static _instance = new CustomerForm();
+	customerId:Field = {
+		name:'customerId'
+		,controlType: 'Hidden'
+		,label: 'customerId'
+		,valueType: 1
+		,errorId: 'invalidFlexibleId'
+		,minValue: -1
+		,maxValue: 9999999999999
+	};
 	name:Field = {
 		name:'name'
 		,controlType: 'Input'
@@ -19,7 +28,7 @@ export class CustomerForm extends Form {
 	email:Field = {
 		name:'email'
 		,controlType: 'Input'
-		,label: 'email'
+		,label: 'Email for Customer'
 		,isRequired: true
 		,valueType: 0
 		,errorId: 'invalidEmail'
@@ -27,7 +36,7 @@ export class CustomerForm extends Form {
 	};
 	addressLine1:Field = {
 		name:'addressLine1'
-		,controlType: 'Input'
+		,controlType: 'Textarea'
 		,label: 'Address Line 1'
 		,valueType: 0
 		,errorId: 'invalidText'
@@ -43,13 +52,15 @@ export class CustomerForm extends Form {
 		this.serveGuests = true;
 		this.fields = new Map();
 		this.controls = new Map();
+		this.controls.set('customerId', [Validators.min(-1), Validators.max(9999999999999)]);
+		this.fields.set('customerId', this.customerId);
 		this.controls.set('name', [Validators.required, Validators.maxLength(150)]);
 		this.fields.set('name', this.name);
 		this.controls.set('email', [Validators.required, Validators.email, Validators.maxLength(1000)]);
 		this.fields.set('email', this.email);
 		this.controls.set('addressLine1', [Validators.maxLength(1000)]);
 		this.fields.set('addressLine1', this.addressLine1);
-		this.opsAllowed = {create: true};
+		this.opsAllowed = {create: true, update: true};
 		this.keyFields = ["customerId"];
 	}
 
@@ -64,11 +75,11 @@ export class CustomerFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'name' | 'email' | 'addressLine1', value: string | number | boolean | null ): void {
+	setFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'name' | 'email' | 'addressLine1' ): string | number | boolean | null {
+	getFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' ): string | number | boolean | null {
 		return super.getFieldValue(name);
 	}
 }
