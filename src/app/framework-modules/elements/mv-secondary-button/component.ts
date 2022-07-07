@@ -1,4 +1,7 @@
-import { Component, Input} from '@angular/core';
+import {
+  Component,
+  Input
+} from '@angular/core';
 
 @Component({
   selector: 'app-mv-secondary-button',
@@ -8,9 +11,8 @@ import { Component, Input} from '@angular/core';
 
 
 export class MvSecondaryyButtonComponent {
-  @Input() name:string;
-  @Input() tooltip:string;
-  @Input() isDisabled:boolean=false;
-  @Input() login:boolean=false;
-  constructor() {}
+  @Input() name: string;
+  @Input() tooltip: string;
+  @Input() isDisabled: boolean = false;
+  @Input() login: boolean = false;
 }

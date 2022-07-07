@@ -13,5 +13,4 @@ export class MvPrimaryButtonComponent {
   @Input() name: string;
   @Input() tooltip: string;
   @Input() isDisabled: boolean = false;
-  constructor() {}
 }

@@ -46,10 +46,6 @@ export abstract class Form {
 	 */
 	public serveGuests = false;
 
-
-	public constructor() {
-   // TODO document why this constructor is empty
-	}
 	/**
 	 * name of this form. 
 	 */

@@ -148,8 +148,4 @@ import {
     ]
 })
 
-export class ElementsModule {
-    constructor() { 
-        /* TODO document why this constructor is empty */ 
-    }
-}
+export class ElementsModule {}

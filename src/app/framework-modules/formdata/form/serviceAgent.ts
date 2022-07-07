@@ -180,7 +180,6 @@ export class ServiceAgent {
 		this.ctx.logout();
 		return new Observable((observer) => {
 			const {
-				next,
 				error
 			} = observer;
 			error('msg');

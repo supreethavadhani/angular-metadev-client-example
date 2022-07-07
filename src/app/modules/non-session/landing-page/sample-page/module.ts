@@ -1,18 +1,14 @@
-import { NgModule } from '@angular/core';
+import {
+  NgModule
+} from '@angular/core';
 
 @NgModule({
-  declarations: [
-  ],
-  imports: [
-  ],
-  exports:[],
+  declarations: [],
+  imports: [],
+  exports: [],
   providers: [],
   bootstrap: [],
   schemas: [],
-  entryComponents:[
-  ]
+  entryComponents: []
 })
-export class LoginModule {
-  constructor() {
-  }
-}
+export class LoginModule {}

@@ -39,7 +39,8 @@ export class MvTextareaComponent implements OnInit {
 	ngOnInit() {
 		this.control = this.formData.formGroup.get(this.field.name) as FormControl;
 	}
-	valueChangeDetector($event) {
+	
+	valueChangeDetector(_$event) {
 		this.valueChange.next(this.formData.getFieldValue(this.field.name));
 	}
 }

@@ -58,7 +58,8 @@ export class MvDatePickerComponent implements OnInit {
 		this.control = this.fd.formGroup.get(this.field.name) as FormControl;
 		this.control.setValue(this.today);
 	}
-	dateChange($event) {
+	
+	dateChange(_$event) {
 		this.control.setValue(moment(this.control.value).format("YYYY-MM-DD"))
 	}
 }

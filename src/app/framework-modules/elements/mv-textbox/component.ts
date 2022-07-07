@@ -15,12 +15,20 @@ import {
 	FormData
 } from '../../formdata/form/formData';
 
+/**
+ * app-mv -> metadev component prefix
+ */
 @Component({
 	selector: 'app-mv-textbox',
 	templateUrl: './component.html',
 	styleUrls: []
 })
 
+/** 
+ * Wrapper class for angular material.
+ * Unpacks values from the model to render a textbox
+ * @ouput - valueChange - value change emitter.
+ */
 export class MvTextboxComponent implements OnInit {
 	@Input() public field: Field;
 	@Input() public formData: FormData;
@@ -30,10 +38,15 @@ export class MvTextboxComponent implements OnInit {
 
 	control: FormControl;
 
+	/**
+	 * On component initalization get
+	 * form contorl from the formData
+	 */
 	ngOnInit() {
 		this.control = this.formData.formGroup.get(this.field.name) as FormControl;
 	}
-	valueChangeDetector($event) {
+	
+	valueChangeDetector(_$event) {
 		this.valueChange.next(this.formData.getFieldValue(this.field.name));
 	}
 }

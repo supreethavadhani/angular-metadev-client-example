@@ -1,6 +1,5 @@
 import {
-  Component,
-  Input
+  Component
 } from '@angular/core';
 
 @Component({
@@ -9,7 +8,4 @@ import {
   styleUrls: []
 })
 
-
-export class MvResetButtonComponent {
-
-}
+export class MvResetButtonComponent {}

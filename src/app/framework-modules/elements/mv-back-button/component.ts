@@ -9,10 +9,8 @@ import {
   styleUrls: []
 })
 
-
 export class MvBackButtonComponent {
   @Input() name: string;
   @Input() tooltip: string;
   @Input() isDisabled: boolean = false;
-  constructor() {}
 }
