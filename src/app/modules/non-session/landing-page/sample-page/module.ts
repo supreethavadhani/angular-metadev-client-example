@@ -1,8 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ExampleComponent } from './component';
-
-
-
 
 @NgModule({
   declarations: [

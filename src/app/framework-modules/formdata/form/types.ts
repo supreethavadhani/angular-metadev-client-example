@@ -1,6 +1,3 @@
-import { ɵNAMESPACE_URIS } from '@angular/platform-browser';
-import { WebDriverLogger } from 'blocking-proxy/built/lib/webdriver_logger';
-
 export interface Message {
 	/**
 	 * one of the pre-defined type Message.

@@ -1,9 +1,0 @@
-
-<mat-chip-list  multiple>
-    <mat-chip color="primary" class="mat-chip-category" style="font-size:16px;" *ngFor="let chip of chips;let k = index" selectable="true"  (click)="toggle(k)" [selected]=isSelected(k)> 
-	  {{getName(chip)}}
-    </mat-chip>
-</mat-chip-list>
-
-
-

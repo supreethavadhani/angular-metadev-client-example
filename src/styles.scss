@@ -120,8 +120,3 @@ body{
     border-left:4px solid #62B1F2;
     font-size:2vw;
 }
-
-
-g.line-chart > g:last-of-type > g:nth-child(n) g.line-series > path {
-    stroke-width: 4;
-}

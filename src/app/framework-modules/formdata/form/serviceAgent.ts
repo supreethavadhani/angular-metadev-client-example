@@ -1,24 +1,49 @@
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { ClientConfig } from './clientConfig';
-import { Conventions } from './conventions';
-import { Vo, ServerResponse, FilterRequest } from './types';
-import { Observable } from 'rxjs';
-import { ClientContext } from './clientContext';
+import {
+	HttpClient,
+	HttpParams
+} from '@angular/common/http';
+import {
+	Injectable
+} from '@angular/core';
+import {
+	ClientConfig
+} from './clientConfig';
+import {
+	Conventions
+} from './conventions';
+import {
+	Vo,
+	ServerResponse,
+	FilterRequest
+} from './types';
+import {
+	Observable
+} from 'rxjs';
+import {
+	ClientContext
+} from './clientContext';
 import 'rxjs/add/operator/map';
-import { Form } from './form';
-import { catchError, map } from 'rxjs/operators';
+import {
+	Form
+} from './form';
+import {
+	catchError,
+	map
+} from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
-import { MessageService } from 'src/app/services/messageService';
+import {
+	MessageService
+} from 'src/app/services/messageService';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+	providedIn: 'root'
+})
 /**
  * A wrapper on HttpClient to take care of our protocols
  * Draws heavily on Observables. If you are tounderstand/maintain this code,  you MUST be thorough with the Observables
  */
 export class ServiceAgent {
-	constructor(private http: HttpClient, private config: ClientConfig, private ctx: ClientContext,private ms:MessageService) {
-	}
+	constructor(private http: HttpClient, private config: ClientConfig, private ctx: ClientContext, private ms: MessageService) {}
 
 	/**
 	 * serve this service. we use a strict service oriented architecture, 
@@ -32,13 +57,23 @@ export class ServiceAgent {
 	 * @param withAuth true if the request is to be sent with auth. If auth is not present, this wil trigger a login
 	 */
 	public serve(serviceName: string,
-		options: { data?: Vo | FilterRequest, asQueryParams?: boolean, headers?: { [key: string]: string } } = {},
-		withAuth: boolean = true): Observable<Vo> {
+		options: {
+			data ? : Vo | FilterRequest,
+			asQueryParams ? : boolean,
+			headers ? : {
+				[key: string]: string
+			}
+		} = {},
+		withAuth: boolean = true): Observable < Vo > {
 
 		const token = this.ctx.getToken();
 		if (withAuth && !token) {
 			//not logged-in.To be re-tried after  a successful login
-			return this.notLoggedIn({ serviceName: serviceName, options: options, withAuth: withAuth });
+			return this.notLoggedIn({
+				serviceName: serviceName,
+				options: options,
+				withAuth: withAuth
+			});
 		}
 		const headers = options.headers || {};
 		headers[Conventions.HEADER_SERVICE] = serviceName;
@@ -50,25 +85,38 @@ export class ServiceAgent {
 		if (data && options.asQueryParams) {
 			params = this.toParams(data);
 		}
-		const obs = this.http.post<ServerResponse>(this.config.url, data, { observe: "response", headers: headers, params: params });
+		const obs = this.http.post < ServerResponse > (this.config.url, data, {
+			observe: "response",
+			headers: headers,
+			params: params
+		});
 		return obs.map(resp => {
 			if (!resp.ok) {
 				const msg = 'Server Error. http-status :' + resp.status + '=' + resp.statusText + (resp.body ? 'Response: ' + JSON.stringify(resp.body) : '');
 				console.error(msg);
-				throw { type: 'error', id: 'serverError', text: msg };
+				throw {
+					type: 'error',
+					id: 'serverError',
+					text: msg
+				};
 			}
 			//no-news is good-news!!
-			if (!resp.body || resp.body === {}) {
+			if (!resp.body) {
 				return {};
 			}
 
-			const { messages, allOk, data, token } = resp.body;
+			const {
+				messages,
+				allOk,
+				data,
+				token
+			} = resp.body;
 			if (allOk) {
-				if(token){
+				if (token) {
 					this.ctx.setToken(token);
 				}
-				if(messages){
-					if(messages[0].type == 'info'){
+				if (messages) {
+					if (messages[0].type == 'info') {
 						this.ms.showInfo(messages[0].text);
 						throw messages;
 					}
@@ -77,42 +125,48 @@ export class ServiceAgent {
 			}
 
 			if (messages) {
-				this.ms.showError(messages[0].text as string);
+				this.ms.showError(messages[0].text);
 				console.error('Server returned with errors :', messages);
 				throw messages;
 			}
 			const msg = 'Server Error. server reported a failure, but did not return any error message';
 			console.error(msg);
-			throw [{ type: 'error', id: 'serverError', text: msg }];
+			throw [{
+				type: 'error',
+				id: 'serverError',
+				text: msg
+			}];
 		});
 	}
-    /**
-     * filter rows for a form and return raw-rows. 
-     * Note that the returned data is NOT set to any model before returning it the caller
-     */
-    public filter(form:Form, filters: FilterRequest): Observable<Vo[]> {
-        const serviceName = form.getServiceName(Conventions.OP_FILTER);
-        if (!serviceName) {
-            return Observable.throwError(Conventions.OP_FILTER + ' operation is not allowed.');
-        }
+	/**
+	 * filter rows for a form and return raw-rows. 
+	 * Note that the returned data is NOT set to any model before returning it the caller
+	 */
+	public filter(form: Form, filters: FilterRequest): Observable < Vo[] > {
+		const serviceName = form.getServiceName(Conventions.OP_FILTER);
+		if (!serviceName) {
+			return Observable.throwError(Conventions.OP_FILTER + ' operation is not allowed.');
+		}
 
-        const obs = this.serve(serviceName, { data: filters });
-        return obs.pipe(
-            map(vo => {
-                return vo.list as Vo[];
-            }),
-            catchError(msgs => {
+		const obs = this.serve(serviceName, {
+			data: filters
+		});
+		return obs.pipe(
+			map(vo => {
+				return vo.list as Vo[];
+			}),
+			catchError(msgs => {
 				console.error('catching in sa')
-                throw msgs;
-            })
-        );
-    }
+				throw msgs;
+			})
+		);
+	}
 	/**
 	 * 
 	 * @param call parameters for serve that was interrupted.
 	 * We have to design a way to return an observable that works after a successful login.
 	 */
-	private notLoggedIn(params: any): Observable<Vo> {
+	private notLoggedIn(params: any): Observable < Vo > {
 		/**
 		 * what we want to do is:
 		 * 1. show a modal panel and accept credentials.
@@ -125,7 +179,10 @@ export class ServiceAgent {
 		this.ms.showError('OOPS! Your Account was logged out! Please Login Again!')
 		this.ctx.logout();
 		return new Observable((observer) => {
-			const { next, error } = observer;
+			const {
+				next,
+				error
+			} = observer;
 			error('msg');
 		});
 	}
@@ -147,7 +204,9 @@ export class ServiceAgent {
 	 */
 	public download(data: any, fileName: string) {
 		const json = JSON.stringify(data);
-		const blob = new Blob([json], { type: 'octet/stream' });
+		const blob = new Blob([json], {
+			type: 'octet/stream'
+		});
 		const url = window.URL.createObjectURL(blob);
 		const a = window.document.createElement('a');
 		a.style.display = 'none';

@@ -1,18 +1,12 @@
-import { MenuService } from '../services/menuService';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterService } from '../services/routerService';
-import { ExcelDownloadService } from '../services/excelDownloadService';
 import { RouterModule } from '@angular/router';
 import { ElementsModule } from '../framework-modules/elements/elements'
-import { CardElementsModule } from '../framework-modules/cards/cardElements';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from '../services/messageService';
 import { NonSessionComponent } from './non-session/component';
 import { LandingComponent } from './non-session/landing-page/component';
 import { ExampleComponent } from './non-session/landing-page/sample-page/component';
-import { PdfDownloadService } from '../services/pdfDownloadService';
-import { ExcelParserService } from '../services/excelParserService';
-import { JsPDFFontService } from '../services/jsPdfFontService';
 
 
 /**
@@ -41,7 +35,6 @@ import { JsPDFFontService } from '../services/jsPdfFontService';
     imports: [
         RouterModule,
         ElementsModule,
-        CardElementsModule,
         HttpClientModule,
     ],
     providers: [],
@@ -52,7 +45,6 @@ import { JsPDFFontService } from '../services/jsPdfFontService';
          */
         RouterModule,
         ElementsModule,
-        CardElementsModule,
         HttpClientModule,
         /**
          * All components to be declared here
@@ -78,12 +70,7 @@ export class BaseModule {
       ngModule: BaseModule,
       providers: [
         RouterService,
-        MessageService,
-        ExcelDownloadService,
-        JsPDFFontService,
-        MenuService,
-        PdfDownloadService,
-        ExcelParserService
+        MessageService
       ]
     };
   }

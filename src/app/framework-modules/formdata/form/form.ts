@@ -48,6 +48,7 @@ export abstract class Form {
 
 
 	public constructor() {
+   // TODO document why this constructor is empty
 	}
 	/**
 	 * name of this form. 
@@ -141,7 +142,7 @@ export interface Field {
 	listKey?: string;
 	valueList?: SelectOption[];
 	keyedList?: { [key: string]: SelectOption[] };
-	controlType?: "Hidden" | "Input" | "Dropdown" | "Output" | "Checkbox" | "Password" | "Output";
+	controlType?: "Hidden" | "Input" | "Dropdown" | "Output" | "Checkbox" | "Password" | "Textarea";
 	disabled?: boolean;
 	hint?: string;
 	multipleSelect?: boolean;

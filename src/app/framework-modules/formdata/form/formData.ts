@@ -385,7 +385,7 @@ export class PanelData {
         this.waitingForServerResponse = true;
 
         return this.serverAgent.serve(serviceName, { data: { list: data } }).pipe(
-            map(vo => {
+            map(_vo => {
                 this.waitingForServerResponse = false;
                 return true;
             }),
@@ -407,11 +407,11 @@ export class PanelData {
             console.error('Form ' + this.form.getName() + ' validation failed. Fields in error:', this.getFieldsInError());
         }
 
-        this.childData.forEach((fd, key) => {
+        this.childData.forEach((fd) => {
             const b = fd.validateForm();
             ok = ok && b;
         });
-        this.childTabularData.forEach((table, key) => {
+        this.childTabularData.forEach((table) => {
             const b = table.validateForm();
             ok = ok && b;
         });
@@ -461,7 +461,7 @@ export class PanelData {
                 this.waitingForServerResponse = false;
                 this.setMessages(msgs);
                 console.error(msgs);
-                throw "Server returned with errors ";
+                throw new Error("Server returned with errors ");
             })
         );
     }
@@ -621,7 +621,7 @@ export class FormData extends PanelData {
             /*
              * design-time list. locally avaliable
              */
-            let arr = field.keyedList[key] as SelectOption[];
+            let arr = field.keyedList[key];
             if (!arr) {
                 console.error('Design time list of values for drop-down not available for key=' + key);
                 arr = [];
@@ -777,7 +777,7 @@ export class FormData extends PanelData {
         }
         const n1 = v1;
         const n2 = v2;
-        if (n1 === NaN || n2 === NaN || n2 > n1) {
+        if (isNaN(n1) || isNaN(n2)|| n2 > n1) {
             return true;
         }
         if (n1 > n2) {

@@ -1,0 +1,23 @@
+:host ::ng-deep .mat-checkbox .mat-checkbox-frame {
+   background:none;
+   border:1px solid #8E8E8E;
+ }
+ 
+ :host  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+   background:none;
+   border:1px solid #004FAA;
+   color: #004FAA; 
+ }
+ :host  ::ng-deep .mat-checkbox-checkmark-path {
+   stroke: #004FAA!important;
+ }
+ 
+ :host  ::ng-deep  .mat-checkbox-indeterminate.mat-accent{
+   background:none !important;
+   border:1px solid #004FAA;
+   color: #004FAA; 
+ }
+ 
+ :host  ::ng-deep .mat-ripple-element {
+   background: #004FAA !important;
+ }
