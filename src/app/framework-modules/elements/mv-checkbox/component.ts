@@ -18,7 +18,7 @@ import {
 @Component({
 	selector: 'app-mv-checkbox',
 	templateUrl: './component.html',
-	styleUrls: ['./component.scss']
+	styleUrls: []
 })
 export class MvCheckboxComponent implements OnInit {
 	@Input() public field: Field;

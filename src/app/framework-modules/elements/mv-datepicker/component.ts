@@ -39,7 +39,7 @@ export class DateFormat extends NativeDateAdapter {
 @Component({
 	selector: 'app-mv-date',
 	templateUrl: './component.html',
-	styleUrls: ['./component.scss'],
+	styleUrls: [],
 	providers: [{
 		provide: DateAdapter,
 		useClass: DateFormat

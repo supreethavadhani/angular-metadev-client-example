@@ -6,7 +6,7 @@ import {
 @Component({
   selector: 'app-mv-back-button',
   templateUrl: "./component.html",
-  styleUrls: ['./component.scss']
+  styleUrls: []
 })
 
 

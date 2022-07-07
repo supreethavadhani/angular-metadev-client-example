@@ -6,7 +6,7 @@ import {
 @Component({
   selector: 'app-mv-primary-button',
   templateUrl: "./component.html",
-  styleUrls: ['./component.scss']
+  styleUrls: []
 })
 
 export class MvPrimaryButtonComponent {

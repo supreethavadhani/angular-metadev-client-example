@@ -24,7 +24,7 @@ import {
 @Component({
 	selector: 'app-mv-dropdown',
 	templateUrl: './component.html',
-	styleUrls: ['./component.scss']
+	styleUrls: []
 })
 export class MvDropDownComponent implements OnInit{
 	@Input() public field: Field;
