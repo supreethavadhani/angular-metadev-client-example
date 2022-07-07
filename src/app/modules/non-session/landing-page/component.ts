@@ -1,5 +1,5 @@
 import { Component,OnInit,Input,ViewChild,ViewContainerRef,Type,ComponentFactoryResolver} from "@angular/core";
-import {DynamicPanel,LandingPanel, GroupPanel} from '../interfaces'
+import { DynamicPanel,GroupPanel } from '../interfaces'
 import { NonSessionComponent } from '../component';
 import { ExampleComponent } from './sample-page/component';
 
@@ -14,7 +14,7 @@ const MENU: { [key: string]:{comp:Type<DynamicPanel>,subTitle?:string}} = {
 
 
 @Component({
-  selector: "landing-page",
+  selector: "app-landing-page",
   templateUrl: "./component.html",
   styleUrls: ["./component.scss"]
 })

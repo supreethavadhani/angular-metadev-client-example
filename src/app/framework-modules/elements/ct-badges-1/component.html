@@ -1,5 +1,0 @@
-<mat-button-toggle-group fxLayout="row" #group="matButtonToggleGroup" [disabled]="disabled" [multiple]='true' (change)="onValChange(group.value)">
-    <mat-button-toggle style="text-align: center" *ngFor="let option of options" value="{{option.key}}" [checked]="option.value">
-        <mat-label>{{option.name}}</mat-label>
-    </mat-button-toggle>
-</mat-button-toggle-group>

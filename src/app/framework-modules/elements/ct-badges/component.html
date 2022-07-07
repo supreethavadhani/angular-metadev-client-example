@@ -1,6 +1,0 @@
-
-        <mat-button-toggle-group fxLayout="row" #group="matButtonToggleGroup" [disabled]="disabled" [multiple]='true'>
-            <mat-button-toggle style="text-align: center" *ngFor="let badge of badges; let k = index" value="badge.key" [checked]="badge.value" (click)="toggle(k)">
-                <mat-label>{{badge.name}}</mat-label>
-            </mat-button-toggle>
-        </mat-button-toggle-group>

@@ -1,19 +1,17 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ServiceAgent } from 'src/app/framework-modules/formdata/form/serviceAgent';
 import { FormData } from 'src/app/framework-modules/formdata/form/formData';
 import { NonSessionComponent } from '../../component';
 import { DynamicPanel, GroupPanel } from '../../interfaces';
-import { CtSpinner } from 'src/app/framework-modules/elements/ct-spinner/component';
 import { CustomerFd, CustomerForm } from 'src/app/framework-modules/formdata/gen/customerForm';
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './component.html',
   styleUrls: ['./component.scss']
 })
 
 export class ExampleComponent implements DynamicPanel {
-  @ViewChild("CtSpinner") public CtSpinner: CtSpinner;
   @Input() inputData: any;
   @Input() parentPanel: GroupPanel;
   @Input() session: NonSessionComponent;

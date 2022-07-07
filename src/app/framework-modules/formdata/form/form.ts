@@ -46,9 +46,6 @@ export abstract class Form {
 	 */
 	public serveGuests = false;
 
-
-	public constructor() {
-	}
 	/**
 	 * name of this form. 
 	 */
@@ -141,7 +138,7 @@ export interface Field {
 	listKey?: string;
 	valueList?: SelectOption[];
 	keyedList?: { [key: string]: SelectOption[] };
-	controlType?: "Hidden" | "Input" | "Dropdown" | "Output" | "Checkbox" | "Password" | "Output";
+	controlType?: "Hidden" | "Input" | "Dropdown" | "Output" | "Checkbox" | "Password" | "Textarea";
 	disabled?: boolean;
 	hint?: string;
 	multipleSelect?: boolean;

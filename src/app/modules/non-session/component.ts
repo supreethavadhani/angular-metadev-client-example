@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, Type, ComponentFactoryResolver, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, Type, ComponentFactoryResolver } from '@angular/core';
 import { LandingPanel, GroupPanel } from './interfaces';
 import { LandingComponent } from './landing-page/component';
  
@@ -11,7 +11,7 @@ const ROUTES: { [key: string]: Type<GroupPanel> } = {
 
 
 @Component({
-  selector: 'non-session',
+  selector: 'app-non-session',
   templateUrl: './component.html',
   styleUrls: ['./component.scss'],
 })
@@ -38,7 +38,6 @@ export class NonSessionComponent implements LandingPanel,OnInit {
      */
     this.menu = ROUTES;
     this.navigate('Landing');
-    // this.navigate('Maintenance');
   }
 
   /**
