@@ -71,12 +71,12 @@ A frontend developer only needs to write a single line of html code to generate 
     2. CD to project directory.
     3. Run the following commands - 
     ```
-    > docker build -t metadev-client .
+    docker build -t metadev-client .
     ```
     ```
-    > docker run --rm -it -p 8080:4200 metadev-client
+    docker run --rm -it -p 8080:4200 metadev-client
     ```
     4. Open [http://localhost:8080/](http://localhost:8080/).
-
 ---
+
 
