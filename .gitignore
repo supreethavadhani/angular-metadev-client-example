@@ -5,3 +5,4 @@ bower_components
 app/**/*.js
 app/**/*.map
 .angular
+.vscode
