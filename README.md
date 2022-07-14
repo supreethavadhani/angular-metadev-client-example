@@ -6,7 +6,7 @@ Metadev-Client-Application-Example
 Metadev-client-example is an example project which uses the Metadev client framework. The goal of the framework is to reduce the code written for frontend development. The framework is best suited for [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning) apps which have a ton of forms.
 
 
-**Metadev** is an abbreviation for Metadata driven development.
+**Metadev** is an abbreviation for Metadata-Driven development.
 
 ---
 
@@ -14,7 +14,7 @@ Metadev-client-example is an example project which uses the Metadev client frame
 
 The project is built using Typescript and Angular. Also the framework uses [Material Design Components](https://material.angular.io/). 
 
-[Metadev-Server-Example](https://github.com/supreethavadhani/metadev-server-example) generates the models using json. The generated files are then copied into to the project.
+[Metadev-Server-Example](https://github.com/supreethavadhani/metadev-server-example) generates the models using simple JSON files *(e.g - [customer-from](https://github.com/supreethavadhani/metadev-server-example/blob/master/assets/spec/form/customer.frm.json)).*  These generated models are copied into to the project folder. Generating these models helps engineers/developers to spend more time on the design rather than the syntax. Also, anyone who does not have any prior experience with typescript will be able to generate models in no-time. The framework uses these generated models to render the forms.
 *The generated files can be found [here](https://github.com/supreethavadhani/metadev-client-example/tree/master/src/app/framework-modules/formdata/gen).*
 
 The metadev-client framework is built into the project for this version and can be found [here](https://github.com/supreethavadhani/metadev-client-example/tree/master/src/app/framework-modules).
@@ -25,7 +25,7 @@ The metadev-client framework is built into the project for this version and can 
 
 ## Example.
 
-A frontend developer only needs to write a single line of html code to generate forms.
+This code displays the Metadev Angular component, which generates the form based on the JSON files provided.
 
 **The Code**
 ``` html
