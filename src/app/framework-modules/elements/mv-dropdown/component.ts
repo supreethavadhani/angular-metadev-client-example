@@ -28,15 +28,15 @@ import {
 })
 export class MvDropDownComponent implements OnInit{
 	@Input() public field: Field;
-	@Input() public fd: FormData;
-	@Input() public multiselect: boolean = false;
+	@Input() public formData: FormData;
+	@Input() public multiSelect: boolean = false;
 	@Output() public valueChange = new EventEmitter < string > ();
 	@Output() public textChange = new EventEmitter < string > ();
 	@Output() public changeListener = new EventEmitter < any > ();
 	public control: FormControl;
 
 	ngOnInit() {
-		this.control = this.fd.formGroup.get(this.field.name) as FormControl;
+		this.control = this.formData.formGroup.get(this.field.name) as FormControl;
 		this.control.valueChanges.subscribe(value => {
 			this.changeListener.next(value)
 		});

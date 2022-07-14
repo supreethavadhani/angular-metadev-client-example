@@ -5,5 +5,6 @@
 	<div *ngFor="let field of fields | keyvalue" [ngSwitch]="field.value.controlType">
 		<app-mv-textbox *ngSwitchCase="'Input'" [field]="form[field.key]" [formData]="formData"></app-mv-textbox>
 		<app-mv-textarea *ngSwitchCase="'Textarea'" [field]="form[field.key]" [formData]="formData"></app-mv-textarea>
+		<app-mv-dropdown *ngSwitchCase="'Dropdown'" [field]="form[field.key]" [formData]="formData"></app-mv-dropdown>
 	</div>
 </mat-card>
