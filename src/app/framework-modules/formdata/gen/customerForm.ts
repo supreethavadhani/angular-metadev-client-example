@@ -7,15 +7,6 @@ import { ServiceAgent} from '../form/serviceAgent';
 
 export class CustomerForm extends Form {
 	private static _instance = new CustomerForm();
-	customerId:Field = {
-		name:'customerId'
-		,controlType: 'Hidden'
-		,label: 'customerId'
-		,valueType: 1
-		,errorId: 'invalidFlexibleId'
-		,minValue: -1
-		,maxValue: 9999999999999
-	};
 	name:Field = {
 		name:'name'
 		,controlType: 'Input'
@@ -28,7 +19,7 @@ export class CustomerForm extends Form {
 	email:Field = {
 		name:'email'
 		,controlType: 'Input'
-		,label: 'Email for Customer'
+		,label: 'email'
 		,isRequired: true
 		,valueType: 0
 		,errorId: 'invalidEmail'
@@ -36,8 +27,24 @@ export class CustomerForm extends Form {
 	};
 	addressLine1:Field = {
 		name:'addressLine1'
-		,controlType: 'Textarea'
+		,controlType: 'Input'
 		,label: 'Address Line 1'
+		,valueType: 0
+		,errorId: 'invalidText'
+		,maxLength: 1000
+	};
+	gender:Field = {
+		name:'gender'
+		,controlType: 'Dropdown'
+		,label: 'Gender'
+		,isRequired: true
+		,listName: 'gender'
+		,valueList: [
+			{value:'Male',text:'Male'},
+			{value:'Female',text:'Female'},
+			{value:'Others',text:'Others'},
+			{value:'Not Applicable',text:'Not Applicable'}
+			]
 		,valueType: 0
 		,errorId: 'invalidText'
 		,maxLength: 1000
@@ -52,15 +59,16 @@ export class CustomerForm extends Form {
 		this.serveGuests = true;
 		this.fields = new Map();
 		this.controls = new Map();
-		this.controls.set('customerId', [Validators.min(-1), Validators.max(9999999999999)]);
-		this.fields.set('customerId', this.customerId);
 		this.controls.set('name', [Validators.required, Validators.maxLength(150)]);
 		this.fields.set('name', this.name);
 		this.controls.set('email', [Validators.required, Validators.email, Validators.maxLength(1000)]);
 		this.fields.set('email', this.email);
 		this.controls.set('addressLine1', [Validators.maxLength(1000)]);
 		this.fields.set('addressLine1', this.addressLine1);
-		this.opsAllowed = {create: true, update: true};
+		this.controls.set('gender', [Validators.required, Validators.maxLength(1000)]);
+		this.fields.set('gender', this.gender);
+		this.opsAllowed = {create: true};
+		this.listFields = ['gender'];
 		this.keyFields = ["customerId"];
 	}
 
@@ -75,11 +83,11 @@ export class CustomerFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1', value: string | number | boolean | null ): void {
+	setFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' ): string | number | boolean | null {
+	getFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender' ): string | number | boolean | null {
 		return super.getFieldValue(name);
 	}
 }
@@ -89,5 +97,6 @@ export interface CustomerVo extends Vo {
 	customerId?: number, 
 	name?: string, 
 	addressLine1?: string, 
+	gender?: string, 
 	email?: string
 }

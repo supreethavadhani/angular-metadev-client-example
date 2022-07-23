@@ -81,12 +81,14 @@ import {
 import {
     MvTextboxComponent
 } from './mv-textbox/component';
+import { MvDropDownComponent } from './mv-dropdown/component';
 
 @NgModule({
     declarations: [
         MvTextareaComponent,
         MvTextboxComponent,
-        MvFieldGeneratorComponent
+        MvFieldGeneratorComponent,
+        MvDropDownComponent
     ],
     imports: [
         MatFormFieldModule,
@@ -140,6 +142,7 @@ import {
         MatGridListModule,
         MvTextareaComponent,
         MvTextboxComponent,
+        MvDropDownComponent,
         MvFieldGeneratorComponent,
         ReactiveFormsModule,
         CommonModule,

@@ -26,27 +26,27 @@ import {
 	templateUrl: './component.html',
 	styleUrls: []
 })
-export class MvDropDownComponent implements OnInit{
+
+/** 
+ * Wrapper class for angular material.
+ * Unpacks values from the model to render a dropdown
+ */
+
+export class MvDropDownComponent implements OnInit {
 	@Input() public field: Field;
-	@Input() public fd: FormData;
-	@Input() public multiselect: boolean = false;
+	@Input() public formData: FormData;
 	@Output() public valueChange = new EventEmitter < string > ();
-	@Output() public textChange = new EventEmitter < string > ();
 	@Output() public changeListener = new EventEmitter < any > ();
-	public control: FormControl;
+
+	public formControl: FormControl;
 
 	ngOnInit() {
-		this.control = this.fd.formGroup.get(this.field.name) as FormControl;
-		this.control.valueChanges.subscribe(value => {
+		this.formControl = this.formData.formGroup.get(this.field.name) as FormControl;
+		this.formControl.valueChanges.subscribe(value => {
 			this.changeListener.next(value)
 		});
 	}
 	currentValue(value) {
 		this.valueChange.next(value);
 	}
-
-	currentText($event) {
-		this.textChange.next(($event.source.selected as MatOption).viewValue);
-	}
-
 }
