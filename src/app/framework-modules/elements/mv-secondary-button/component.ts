@@ -10,9 +10,8 @@ import {
 })
 
 
-export class MvSecondaryyButtonComponent {
+export class MvSecondaryButtonComponent {
   @Input() name: string;
   @Input() tooltip: string;
   @Input() isDisabled: boolean = false;
-  @Input() login: boolean = false;
 }

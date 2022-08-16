@@ -21,5 +21,6 @@ export class ExampleComponent implements DynamicPanel {
   public constructor(public sa: ServiceAgent) {
     this.form = CustomerForm.getInstance();
     this.fd = new FormData(this.form, this.sa);
+    console.log(this.fd);
   }
 }

@@ -81,12 +81,16 @@ import {
 import {
     MvTextboxComponent
 } from './mv-textbox/component';
+import { MvPrimaryButtonComponent } from './mv-primary-button/component';
+import { MvSecondaryButtonComponent } from './mv-secondary-button/component';
 
 @NgModule({
     declarations: [
         MvTextareaComponent,
         MvTextboxComponent,
-        MvFieldGeneratorComponent
+        MvFieldGeneratorComponent,
+        MvPrimaryButtonComponent,
+        MvSecondaryButtonComponent,
     ],
     imports: [
         MatFormFieldModule,
@@ -140,6 +144,8 @@ import {
         MatGridListModule,
         MvTextareaComponent,
         MvTextboxComponent,
+        MvPrimaryButtonComponent,
+        MvSecondaryButtonComponent,
         MvFieldGeneratorComponent,
         ReactiveFormsModule,
         CommonModule,

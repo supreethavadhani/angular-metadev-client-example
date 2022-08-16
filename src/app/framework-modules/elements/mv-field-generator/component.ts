@@ -37,5 +37,6 @@ export class MvFieldGeneratorComponent implements OnInit {
 	ngOnInit() {
 		this.form = this.formData.form;
 		this.fields = this.formData.form.fields;
+		console.log(this.form);
 	}
 }

@@ -1,0 +1,361 @@
+Date: Tue, 16 Aug 2022 04:21:33 +0000 (UTC)
+Message-ID: <1667873019.15.1660623693949@4d3d80340f72>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_14_426119389.1660623693949"
+
+------=_Part_14_426119389.1660623693949
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Metadev</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Metadev</h1>
+    <div class=3D"Section1">
+        <p><a class=3D"confluence-userlink user-mention current-user-mentio=
+n" data-username=3D"6195c7afc15977006a1dcf5d" data-account-id=3D"6195c7afc1=
+5977006a1dcf5d" href=3D"https://oregonstate-innovationlab.atlassian.net/wik=
+i/people/6195c7afc15977006a1dcf5d?ref=3Dconfluence" target=3D"_blank" data-=
+linked-resource-id=3D"98436" data-linked-resource-version=3D"1" data-linked=
+-resource-type=3D"userinfo" data-base-url=3D"https://oregonstate-innovation=
+lab.atlassian.net/wiki">Supreeth Suresh Avadhani</a> </p>
+<p>Software Innovation Lab</p>
+<p>Oregon State University</p>
+<h2 id=3D"Metadev-Introduction">Introduction</h2>
+<p><a href=3D"https://en.wikipedia.org/wiki/Enterprise_resource_planning" c=
+lass=3D"external-link" rel=3D"nofollow">ERP softwares</a> usually have a lo=
+t of screens which usually follow a certain template <a href=3D"https://www=
+.heurio.co/nielsens-10-usability-heuristics" class=3D"external-link" rel=3D=
+"nofollow"><em>(Nielsen's Usability Heuristics #4)</em></a>. The templates =
+can be broadly classified into</p>
+<ol>
+<li><p>Data visualization page. <em>(Eg. Tables, Charts) </em></p></li>
+<li><p>Data entry page. <em>(Eg. Forms)</em></p></li>
+<li><p>Data edit page. <em>(Eg. Forms)</em></p></li>
+<li><p>Data deletion page. <em>(Eg. Forms)</em> </p></li>
+</ol>
+<p>While building such software application it proves to be a challenge for=
+ the following reasons</p>
+<ol>
+<li><p>Build the screens with high throughput.</p></li>
+<li><p>Maintain standards across multiple teams.</p></li>
+<li><p>Require multiple engineers working on each module/page/screen.</p></=
+li>
+</ol>
+<h2 id=3D"Metadev-WhatisMetadev?">What is Metadev?</h2>
+<p>Metadev is an application development framework which uses only metadata=
+ to design, engineer and build applications. </p>
+<h2 id=3D"Metadev-WhatistheidealusecaseforMetadev?">What is the ideal use c=
+ase for Metadev?</h2>
+<p>The following are ideal conditions for using Metadev if -</p>
+<ul>
+<li><p>Building an ERP software system with over 25 screens.</p></li>
+<li><p>The engineering team is lean.</p></li>
+<li><p>Requires rapid application development.</p></li>
+<li><p>Building the application from scratch.</p></li>
+</ul>
+<h2 id=3D"Metadev-WhatvaluedoesMetadevaddtothebusiness?">What value does Me=
+tadev add to the business? </h2>
+<ol>
+<li><p>Generate modules with high efficiency.</p></li>
+<li><p>Maintain standards across multiple teams.</p></li>
+<li><p>Build RESTful application with minimal application development exper=
+ience.</p></li>
+</ol>
+<h2 id=3D"Metadev-HowtouseMetadev?">How to use Metadev?</h2>
+<p>A engineering team usually consists of the following or similar roles <e=
+m>(If functioning as a lean team multiple roles can be played the same pers=
+on) </em>- </p>
+<ol>
+<li><p>UX Architect - <em>responsible for designing user interfaces</em>.</=
+p></li>
+<li><p>UI Engineer - <em>responsible for building the user interfaces</em><=
+/p></li>
+<li><p>Backend Engineer - <em>responsible for implementing the features/fun=
+ctions on the server side of the application.</em></p></li>
+<li><p>DB Administrator - <em>responsible for directing and performs all ac=
+tivities related to maintaining a successful database environment</em></p><=
+/li>
+<li><p>DB Engineer - <em>responsible for creating, modifying, maintaining d=
+atabases </em></p></li>
+</ol>
+<h3 id=3D"Metadev-GroundWork">Ground Work </h3>
+<ul>
+<li><p>A frontend application is setup and the metadev-package is imported.=
+</p></li>
+<li><p>A backend application is setup and the metadev JAR file is imported.=
+</p></li>
+<li><p>Database is created.</p></li>
+</ul>
+<h3 id=3D"Metadev-AsaUXArchitect(Alan)-">As a UX Architect <em>(Alan) -</em=
+></h3>
+<ol>
+<li><p>Designs the screens using UX design tools such as Adobe XD/Sketch et=
+c.</p></li>
+<li><p>Conforms to Nielsen=E2=80=99s Heuristic #4 - <em>Consistency and sta=
+ndards.</em></p></li>
+<li><p>Identifies various repeating templates.</p></li>
+<li><p>Creates a metadev template for each of the templates using JSONs.</p=
+></li>
+</ol>
+<h3 id=3D"Metadev-AsaDBAdministrator(Bob)-">As a DB Administrator <em>(Bob)=
+ -</em></h3>
+<ol>
+<li><p>Designs the databases.</p></li>
+<li><p>Decides which data goes where.</p></li>
+</ol>
+<h3 id=3D"Metadev-AsaDBEngineer(Chloe)-">As a DB Engineer<em> (Chloe) -</em=
+></h3>
+<ol>
+<li><p>Implements the databases as per the Bob=E2=80=99s design.</p></li>
+</ol>
+<h3 id=3D"Metadev-AsaBackendEngineer(Diane)-">As a Backend Engineer (Diane)=
+ -</h3>
+<ol>
+<li><p>Creates a Metadev Record mapping the data to the database.</p></li>
+<li><p>Decides the allowed DB operations for each record. </p></li>
+</ol>
+<h3 id=3D"Metadev-AsaUIEngineer(Emily)-">As a UI Engineer (Emily) - </h3>
+<ol>
+<li><p>Writes a Metadev Form mapping the UI elements to the data models</p>=
+</li>
+<li><p>Write a Metadev Page mapping the template/form and record to be used=
+</p></li>
+<li><p>Runs the Metadev generator.</p></li>
+</ol>
+<h3 id=3D"Metadev-FinalProduct-">Final Product -</h3>
+<ol>
+<li><p>A page is created with Alan=E2=80=99s template design.</p></li>
+<li><p>The page has the UI elements as written by Emily.</p></li>
+<li><p>A RESTful API is generated as per Diane=E2=80=99s design.</p></li>
+<li><p>Data is stored in the database.</p></li>
+<li><p>Data is retrieved from the database. </p></li>
+</ol>
+<h2 id=3D"Metadev-ExampleUseCase">Example Use Case</h2>
+<p><a href=3D"/wiki/spaces/MET/pages/53739555/Metadev+-+Example+Use+Case" d=
+ata-linked-resource-id=3D"53739555" data-linked-resource-version=3D"4" data=
+-linked-resource-type=3D"page">Metadev - Example Use Case</a> </p>
+    </div>
+</body>
+</html>
+------=_Part_14_426119389.1660623693949--

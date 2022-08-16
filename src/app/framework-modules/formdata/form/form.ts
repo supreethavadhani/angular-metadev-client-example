@@ -138,13 +138,14 @@ export interface Field {
 	listKey?: string;
 	valueList?: SelectOption[];
 	keyedList?: { [key: string]: SelectOption[] };
-	controlType?: "Hidden" | "Input" | "Dropdown" | "Output" | "Checkbox" | "Password" | "Textarea";
+	controlType?: "Hidden" | "Input" | "Dropdown" | "Output" | "Checkbox" | "Password" | "Textarea" | "Button";
 	disabled?: boolean;
 	hint?: string;
 	multipleSelect?: boolean;
 	icon?: string;
 	suffix?: string;
 	prefix?: string;
+	buttonType?: string;
 
 }
 
