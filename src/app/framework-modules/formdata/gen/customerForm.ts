@@ -1,9 +1,6 @@
 
-import { Form , Field, ChildForm } from '../form/form';
-import { FormData } from '../form/formData';
-import { SelectOption, Vo } from '../form/types';
+import { Form,Field, FormData, SelectOption, Vo, ServiceAgent  } from 'mv-core';
 import { Validators } from '@angular/forms'
-import { ServiceAgent} from '../form/serviceAgent';
 
 export class CustomerForm extends Form {
 	private static _instance = new CustomerForm();
@@ -49,9 +46,8 @@ export class CustomerForm extends Form {
 		,errorId: 'invalidText'
 		,maxLength: 1000
 	};
-
 	public static getInstance(): CustomerForm {
-		return CustomerForm._instance;
+		return new CustomerForm();
 	}
 
 	constructor() {
@@ -72,7 +68,7 @@ export class CustomerForm extends Form {
 		this.keyFields = ["customerId"];
 	}
 
-	public getName(): string {
+	override getName(): string {
 		 return 'customer';
 	}
 }
@@ -83,20 +79,20 @@ export class CustomerFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender', value: string | number | boolean | null ): void {
+	override setFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender' ): string | number | boolean | null {
+	override getFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender' ): string | number | boolean {
 		return super.getFieldValue(name);
 	}
 }
 
 
 export interface CustomerVo extends Vo {
-	customerId?: number, 
-	name?: string, 
-	addressLine1?: string, 
-	gender?: string, 
-	email?: string
+	customerId: number , 
+	name: string, 
+	addressLine1: string, 
+	gender: string, 
+	email: string
 }

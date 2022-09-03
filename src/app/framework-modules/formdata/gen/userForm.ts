@@ -1,9 +1,7 @@
 
-import { Form , Field, ChildForm } from '../form/form';
-import { FormData } from '../form/formData';
-import { SelectOption, Vo } from '../form/types';
-import { Validators } from '@angular/forms'
-import { ServiceAgent} from '../form/serviceAgent';
+
+import { Form,Field, FormData, SelectOption, Vo, ServiceAgent  } from 'mv-core';
+import { Validators } from '@angular/forms';
 
 export class UserForm extends Form {
 	private static _instance = new UserForm();
@@ -199,7 +197,7 @@ export class UserForm extends Form {
 		this.keyFields = ["userId"];
 	}
 
-	public getName(): string {
+	override getName(): string {
 		 return 'user';
 	}
 }
@@ -210,34 +208,34 @@ export class UserFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'userId' | 'instituteId' | 'trustId' | 'userType' | 'loginId' | 'loginToken' | 'loginEnabled' | 'resetPasswordCount' | 'loginCount' | 'confirmationToken' | 'currentLoginIp' | 'previousLoginIp' | 'currentLoginAt' | 'previousLoginAt' | 'resetPasswordSentAt' | 'createdAt' | 'updatedAt', value: string | number | boolean | null ): void {
+	override setFieldValue(name: 'userId' | 'instituteId' | 'trustId' | 'userType' | 'loginId' | 'loginToken' | 'loginEnabled' | 'resetPasswordCount' | 'loginCount' | 'confirmationToken' | 'currentLoginIp' | 'previousLoginIp' | 'currentLoginAt' | 'previousLoginAt' | 'resetPasswordSentAt' | 'createdAt' | 'updatedAt', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'userId' | 'instituteId' | 'trustId' | 'userType' | 'loginId' | 'loginToken' | 'loginEnabled' | 'resetPasswordCount' | 'loginCount' | 'confirmationToken' | 'currentLoginIp' | 'previousLoginIp' | 'currentLoginAt' | 'previousLoginAt' | 'resetPasswordSentAt' | 'createdAt' | 'updatedAt' ): string | number | boolean | null {
+	override getFieldValue(name: 'userId' | 'instituteId' | 'trustId' | 'userType' | 'loginId' | 'loginToken' | 'loginEnabled' | 'resetPasswordCount' | 'loginCount' | 'confirmationToken' | 'currentLoginIp' | 'previousLoginIp' | 'currentLoginAt' | 'previousLoginAt' | 'resetPasswordSentAt' | 'createdAt' | 'updatedAt' ): string | number | boolean  {
 		return super.getFieldValue(name);
 	}
 }
 
 
 export interface UserVo extends Vo {
-	loginId?: string, 
-	currentLoginAt?: string, 
-	resetPasswordSentAt?: string, 
-	loginToken?: string, 
-	resetPasswordCount?: number, 
-	previousLoginAt?: string, 
-	isActive?: boolean, 
-	userId?: number, 
-	loginCount?: number, 
-	previousLoginIp?: string, 
-	trustId?: number, 
-	createdAt?: string, 
-	password?: string, 
-	currentLoginIp?: string, 
-	instituteId?: number, 
-	confirmationToken?: string, 
-	loginEnabled?: boolean, 
-	userType?: string, 
-	updatedAt?: string
+	loginId: string | null, 
+	currentLoginAt: string | null, 
+	resetPasswordSentAt: string | null, 
+	loginToken: string | null, 
+	resetPasswordCount: number | null, 
+	previousLoginAt: string | null, 
+	isActive: boolean, 
+	userId: number | null, 
+	loginCount: number | null, 
+	previousLoginIp: string | null, 
+	trustId: number | null, 
+	createdAt: string | null, 
+	password: string | null, 
+	currentLoginIp: string | null, 
+	instituteId: number | null, 
+	confirmationToken: string | null, 
+	loginEnabled: boolean | null, 
+	userType: string | null, 
+	updatedAt: string | null
 }

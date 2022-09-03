@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { ElementsModule } from 'src/app/framework-modules/elements/elements';
 import { BaseModule } from '../../base.module';
 
 
@@ -8,7 +7,6 @@ import { BaseModule } from '../../base.module';
   declarations: [
   ],
   imports: [
-    ElementsModule,
     BaseModule,
   ],
   exports:[],

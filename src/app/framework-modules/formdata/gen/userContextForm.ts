@@ -1,9 +1,6 @@
 
-import { Form , Field, ChildForm } from '../form/form';
-import { FormData } from '../form/formData';
-import { SelectOption, Vo } from '../form/types';
+import { Form,Field, FormData, SelectOption, Vo, ServiceAgent  } from 'mv-core';
 import { Validators } from '@angular/forms'
-import { ServiceAgent} from '../form/serviceAgent';
 
 export class UserContextForm extends Form {
 	private static _instance = new UserContextForm();
@@ -19,7 +16,7 @@ export class UserContextForm extends Form {
 		this.keyFields = ["userId"];
 	}
 
-	public getName(): string {
+	override getName(): string {
 		 return 'userContext';
 	}
 }
@@ -34,15 +31,15 @@ export class UserContextFd extends FormData {
 
 
 export interface UserContextVo extends Vo {
-	trustId?: number, 
-	allowedPages?: string, 
-	loginId?: string, 
-	phoneNumber?: string, 
-	designationId?: number, 
-	name?: string, 
-	instituteId?: number, 
-	userType?: string, 
-	designation?: string, 
-	userId?: number, 
-	email?: string
+	trustId: number | null, 
+	allowedPages: string | null, 
+	loginId: string | null, 
+	phoneNumber: string | null, 
+	designationId: number | null, 
+	name: string | null, 
+	instituteId: number | null, 
+	userType: string | null, 
+	designation: string | null, 
+	userId: number | null, 
+	email: string | null
 }

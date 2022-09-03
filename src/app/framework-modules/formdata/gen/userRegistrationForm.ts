@@ -1,9 +1,6 @@
 
-import { Form , Field, ChildForm } from '../form/form';
-import { FormData } from '../form/formData';
-import { SelectOption, Vo } from '../form/types';
-import { Validators } from '@angular/forms'
-import { ServiceAgent} from '../form/serviceAgent';
+import { Form,Field, FormData, SelectOption, Vo, ServiceAgent  } from 'mv-core';
+import { Validators } from '@angular/forms';
 
 export class UserRegistrationForm extends Form {
 	private static _instance = new UserRegistrationForm();
@@ -64,7 +61,7 @@ export class UserRegistrationForm extends Form {
 		this.opsAllowed = {update: true};
 	}
 
-	public getName(): string {
+	override getName(): string {
 		 return 'userRegistration';
 	}
 }
@@ -75,19 +72,19 @@ export class UserRegistrationFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'otp' | 'email' | 'newPassword' | 'confirmPassword', value: string | number | boolean | null ): void {
+	override setFieldValue(name: 'otp' | 'email' | 'newPassword' | 'confirmPassword', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'otp' | 'email' | 'newPassword' | 'confirmPassword' ): string | number | boolean | null {
+	override getFieldValue(name: 'otp' | 'email' | 'newPassword' | 'confirmPassword' ): string | number | boolean  {
 		return super.getFieldValue(name);
 	}
 }
 
 
 export interface UserRegistrationVo extends Vo {
-	newPassword?: string, 
-	confirmPassword?: string, 
-	otp?: string, 
-	email?: string
+	newPassword: string | null, 
+	confirmPassword: string | null, 
+	otp: string | null, 
+	email:string | null
 }
