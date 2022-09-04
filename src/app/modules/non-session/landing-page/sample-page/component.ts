@@ -18,8 +18,8 @@ export class ExampleComponent implements DynamicPanel {
 
   public form: CustomerForm;
   public fd: CustomerFd;
-  public constructor(sa:ServiceAgent) {
+  public constructor( sa:ServiceAgent) {
     this.form = new CustomerForm(); 
-    this.fd = new CustomerFd(this.form,sa);
+    this.fd = new CustomerFd(this.form, sa);
   }
 }
