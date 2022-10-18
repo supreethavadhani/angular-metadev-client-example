@@ -1,4 +1,4 @@
-Metadev-Client-Application-Example
+Metadev-Client-Core
 ===========
 
 ## Introduction.
