@@ -1,7 +1,6 @@
 import {
   Component,
-  Input,
-  OnInit
+  Input
 } from '@angular/core';
 import {
   ServiceAgent
@@ -21,7 +20,7 @@ import {
 @Component({
   selector: 'app-login',
   templateUrl: './component.html',
-  styleUrls: ['./component.scss']
+  styleUrls: []
 })
 
 export class ExampleComponent implements DynamicPanel {

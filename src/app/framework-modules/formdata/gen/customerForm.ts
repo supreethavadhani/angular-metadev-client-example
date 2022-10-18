@@ -1,9 +1,6 @@
 
-import { Form , Field, ChildForm } from 'mv-core';
-import { FormData } from 'mv-core';
-import { SelectOption, Vo } from 'mv-core';
-import { Validators } from '@angular/forms'
-import { ServiceAgent} from 'mv-core';
+import { Form , Field, Vo, ServiceAgent, FormData } from 'mv-core';
+import { Validators } from '@angular/forms';
 
 export class CustomerForm extends Form {
 	private static _instance = new CustomerForm();
