@@ -5,7 +5,6 @@ import { BaseModule } from './modules/base.module';
 import { AppRouting } from './app.router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   imports: [
     BrowserModule,
     AppRouting,
-    NgxChartsModule,
     BaseModule.forRoot(),
     NgbModule,
     BrowserAnimationsModule,

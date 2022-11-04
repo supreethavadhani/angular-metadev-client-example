@@ -1,14 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterService } from '../services/routerService';
 import { RouterModule } from '@angular/router';
-import { ElementsModule } from '../framework-modules/elements/elements'
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from '../services/messageService';
 import { NonSessionComponent } from './non-session/component';
 import { LandingComponent } from './non-session/landing-page/component';
 import { ExampleComponent } from './non-session/landing-page/sample-page/component';
-
-
+import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
 /**
  * Do not import any angular material module in this file unless it it the only option
  * Material modules to be imported in '../framework-modules/elements/elements.ts'
@@ -34,8 +32,10 @@ import { ExampleComponent } from './non-session/landing-page/sample-page/compone
     ],
     imports: [
         RouterModule,
-        ElementsModule,
         HttpClientModule,
+        MVClientCoreAppModule,
+        MVClientCoreAppModule,
+        MVComponentsModule
     ],
     providers: [],
     bootstrap: [],
@@ -44,7 +44,6 @@ import { ExampleComponent } from './non-session/landing-page/sample-page/compone
          * App Components
          */
         RouterModule,
-        ElementsModule,
         HttpClientModule,
         /**
          * All components to be declared here
@@ -58,6 +57,8 @@ import { ExampleComponent } from './non-session/landing-page/sample-page/compone
          * Non Session Group Panels
          */
         ExampleComponent,
+        MVClientCoreAppModule,
+        MVComponentsModule
         /**
          * Session Group Panels
          */

@@ -1,14 +1,26 @@
-import { Component, Input } from '@angular/core';
-import { ServiceAgent } from 'src/app/framework-modules/formdata/form/serviceAgent';
-import { FormData } from 'src/app/framework-modules/formdata/form/formData';
-import { NonSessionComponent } from '../../component';
-import { DynamicPanel, GroupPanel } from '../../interfaces';
-import { CustomerFd, CustomerForm } from 'src/app/framework-modules/formdata/gen/customerForm';
+import {
+  Component,
+  Input
+} from '@angular/core';
+import {
+  ServiceAgent
+} from 'mv-core';
+import {
+  CustomerFd,
+  CustomerForm
+} from 'src/app/framework-modules/formdata/gen/customerForm';
+import {
+  NonSessionComponent
+} from '../../component';
+import {
+  DynamicPanel,
+  GroupPanel
+} from '../../interfaces';
 
 @Component({
   selector: 'app-login',
   templateUrl: './component.html',
-  styleUrls: ['./component.scss']
+  styleUrls: []
 })
 
 export class ExampleComponent implements DynamicPanel {
@@ -18,8 +30,8 @@ export class ExampleComponent implements DynamicPanel {
 
   public form: CustomerForm;
   public fd: CustomerFd;
-  public constructor(public sa: ServiceAgent) {
-    this.form = CustomerForm.getInstance();
-    this.fd = new FormData(this.form, this.sa);
+  public constructor(sa: ServiceAgent) {
+    this.form = new CustomerForm();
+    this.fd = new CustomerFd(this.form, sa);
   }
 }

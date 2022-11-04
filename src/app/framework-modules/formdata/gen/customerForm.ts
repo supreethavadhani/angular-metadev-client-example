@@ -1,9 +1,6 @@
 
-import { Form , Field, ChildForm } from '../form/form';
-import { FormData } from '../form/formData';
-import { SelectOption, Vo } from '../form/types';
-import { Validators } from '@angular/forms'
-import { ServiceAgent} from '../form/serviceAgent';
+import { Form , Field, Vo, ServiceAgent, FormData } from 'mv-core';
+import { Validators } from '@angular/forms';
 
 export class CustomerForm extends Form {
 	private static _instance = new CustomerForm();
@@ -94,9 +91,11 @@ export class CustomerFd extends FormData {
 
 
 export interface CustomerVo extends Vo {
+	cancel?: string, 
+	gender?: string, 
 	customerId?: number, 
 	name?: string, 
+	save?: string, 
 	addressLine1?: string, 
-	gender?: string, 
 	email?: string
 }
