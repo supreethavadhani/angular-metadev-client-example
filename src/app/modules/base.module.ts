@@ -8,10 +8,6 @@ import { LandingComponent } from './non-session/landing-page/component';
 import { ExampleComponent } from './non-session/landing-page/sample-page/component';
 import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
 import { TemplateOneComponent } from './templates/template-1/component';
-/**
- * Do not import any angular material module in this file unless it it the only option
- * Material modules to be imported in '../framework-modules/elements/elements.ts'
- */
 
 @NgModule({
     declarations: [
@@ -62,6 +58,7 @@ import { TemplateOneComponent } from './templates/template-1/component';
         MVClientCoreAppModule,
         MVComponentsModule,
         TemplateOneComponent,
+
         /**
          * Session Group Panels
          */
