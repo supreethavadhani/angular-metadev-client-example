@@ -7,10 +7,7 @@ import { NonSessionComponent } from './non-session/component';
 import { LandingComponent } from './non-session/landing-page/component';
 import { ExampleComponent } from './non-session/landing-page/sample-page/component';
 import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
-/**
- * Do not import any angular material module in this file unless it it the only option
- * Material modules to be imported in '../framework-modules/elements/elements.ts'
- */
+import { TemplateOneComponent } from './templates/template-1/component';
 
 @NgModule({
     declarations: [
@@ -26,6 +23,7 @@ import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
          * Non Session Group Panels
          */
         ExampleComponent,
+        TemplateOneComponent,
         /**
          * Session Group Panels
          */
@@ -58,7 +56,9 @@ import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
          */
         ExampleComponent,
         MVClientCoreAppModule,
-        MVComponentsModule
+        MVComponentsModule,
+        TemplateOneComponent,
+
         /**
          * Session Group Panels
          */
