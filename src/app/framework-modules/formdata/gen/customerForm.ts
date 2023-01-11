@@ -1,5 +1,4 @@
-
-import { Form , Field, Vo, ServiceAgent, FormData } from 'mv-core';
+import { Form , Field, ChildForm ,FormData, SelectOption, Vo, ServiceAgent} from 'mv-core';
 import { Validators } from '@angular/forms';
 
 export class CustomerForm extends Form {
@@ -64,7 +63,7 @@ export class CustomerForm extends Form {
 		this.fields.set('addressLine1', this.addressLine1);
 		this.controls.set('gender', [Validators.required, Validators.maxLength(1000)]);
 		this.fields.set('gender', this.gender);
-		this.opsAllowed = {create: true};
+		this.opsAllowed = {create: true, filter: true};
 		this.listFields = ['gender'];
 		this.keyFields = ["customerId"];
 	}
@@ -91,11 +90,9 @@ export class CustomerFd extends FormData {
 
 
 export interface CustomerVo extends Vo {
-	cancel?: string, 
-	gender?: string, 
 	customerId?: number, 
 	name?: string, 
-	save?: string, 
 	addressLine1?: string, 
+	gender?: string, 
 	email?: string
 }

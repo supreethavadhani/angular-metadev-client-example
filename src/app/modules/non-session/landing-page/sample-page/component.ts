@@ -3,6 +3,7 @@ import {
   Input
 } from '@angular/core';
 import {
+  FilterRequest,
   ServiceAgent
 } from 'mv-core';
 import {
@@ -33,5 +34,15 @@ export class ExampleComponent implements DynamicPanel {
   public constructor(sa: ServiceAgent) {
     this.form = new CustomerForm();
     this.fd = new CustomerFd(this.form, sa);
+  }
+
+  fetchData() {
+    this.fd.setFieldValue('name', this.inputData);
+    this.fd.fetchData().subscribe({
+      next: vo => {
+      },
+      error: msg => console.error("Error from server ", msg)
+    });
+
   }
 }

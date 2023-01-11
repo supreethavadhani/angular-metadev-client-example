@@ -1,6 +1,7 @@
 import {
     Component, Input,
   } from '@angular/core';
+import { FormData } from 'mv-core';
 
   
   @Component({
@@ -10,5 +11,18 @@ import {
   })
   
   export class TemplateOneComponent {
-    @Input() fd: any;
+    @Input() fd: FormData;
+    constructor(){
+    }
+
+    saveForm(){
+      this.fd.saveAsNew().subscribe(
+        data=>{
+          console.log("saved")
+        },
+        err=>{
+          console.log(err)
+        }
+      )
+    }
     }
