@@ -1,8 +1,18 @@
-import { Form , Field, ChildForm ,FormData, SelectOption, Vo, ServiceAgent} from 'mv-core';
-import { Validators } from '@angular/forms';
+
+import { Form , Field, ChildForm ,FormData, SelectOption, Vo, ServiceAgent } from 'mv-core';
+import { Validators } from '@angular/forms'
 
 export class CustomerForm extends Form {
 	private static _instance = new CustomerForm();
+	customerId:Field = {
+		name:'customerId'
+		,controlType: 'Hidden'
+		,label: 'customerId'
+		,valueType: 1
+		,errorId: 'invalidFlexibleId'
+		,minValue: -1
+		,maxValue: 9999999999999
+	};
 	name:Field = {
 		name:'name'
 		,controlType: 'Input'
@@ -45,6 +55,14 @@ export class CustomerForm extends Form {
 		,errorId: 'invalidText'
 		,maxLength: 1000
 	};
+	prefferedName:Field = {
+		name:'prefferedName'
+		,controlType: 'Input'
+		,label: 'Prefered Name '
+		,valueType: 0
+		,errorId: 'invalidName'
+		,maxLength: 150
+	};
 
 	public static getInstance(): CustomerForm {
 		return CustomerForm._instance;
@@ -55,6 +73,8 @@ export class CustomerForm extends Form {
 		this.serveGuests = true;
 		this.fields = new Map();
 		this.controls = new Map();
+		this.controls.set('customerId', [Validators.min(-1), Validators.max(9999999999999)]);
+		this.fields.set('customerId', this.customerId);
 		this.controls.set('name', [Validators.required, Validators.maxLength(150)]);
 		this.fields.set('name', this.name);
 		this.controls.set('email', [Validators.required, Validators.email, Validators.maxLength(1000)]);
@@ -63,7 +83,9 @@ export class CustomerForm extends Form {
 		this.fields.set('addressLine1', this.addressLine1);
 		this.controls.set('gender', [Validators.required, Validators.maxLength(1000)]);
 		this.fields.set('gender', this.gender);
-		this.opsAllowed = {create: true, filter: true};
+		this.controls.set('prefferedName', [Validators.maxLength(150)]);
+		this.fields.set('prefferedName', this.prefferedName);
+		this.opsAllowed = {create: true, filter: true, get: true};
 		this.listFields = ['gender'];
 		this.keyFields = ["customerId"];
 	}
@@ -79,20 +101,21 @@ export class CustomerFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender', value: string | number | boolean | null ): void {
+	setFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' | 'gender' | 'prefferedName', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'name' | 'email' | 'addressLine1' | 'gender' ): string | number | boolean | null {
+	getFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' | 'gender' | 'prefferedName' ): string | number | boolean | null {
 		return super.getFieldValue(name);
 	}
 }
 
 
 export interface CustomerVo extends Vo {
+	gender?: string, 
+	prefferedName?: string, 
 	customerId?: number, 
 	name?: string, 
 	addressLine1?: string, 
-	gender?: string, 
 	email?: string
 }

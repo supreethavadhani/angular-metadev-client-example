@@ -1,5 +1,6 @@
-import { Form , Field, ChildForm ,FormData, SelectOption, Vo, ServiceAgent} from 'mv-core';
-import { Validators } from '@angular/forms';
+
+import { Form , Field, ChildForm ,FormData, SelectOption, Vo, ServiceAgent } from 'mv-core';
+import { Validators } from '@angular/forms'
 
 export class UserContextForm extends Form {
 	private static _instance = new UserContextForm();
