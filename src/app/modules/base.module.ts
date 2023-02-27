@@ -5,9 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from '../services/messageService';
 import { NonSessionComponent } from './non-session/component';
 import { LandingComponent } from './non-session/landing-page/component';
-import { ExampleComponent } from './non-session/landing-page/sample-page/component';
-import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
-import { TemplateOneComponent } from './templates/template-1/component';
 
 @NgModule({
     declarations: [
@@ -22,8 +19,6 @@ import { TemplateOneComponent } from './templates/template-1/component';
         /**
          * Non Session Group Panels
          */
-        ExampleComponent,
-        TemplateOneComponent,
         /**
          * Session Group Panels
          */
@@ -31,9 +26,6 @@ import { TemplateOneComponent } from './templates/template-1/component';
     imports: [
         RouterModule,
         HttpClientModule,
-        MVClientCoreAppModule,
-        MVClientCoreAppModule,
-        MVComponentsModule
     ],
     providers: [],
     bootstrap: [],
@@ -54,11 +46,6 @@ import { TemplateOneComponent } from './templates/template-1/component';
         /**
          * Non Session Group Panels
          */
-        ExampleComponent,
-        MVClientCoreAppModule,
-        MVComponentsModule,
-        TemplateOneComponent,
-
         /**
          * Session Group Panels
          */

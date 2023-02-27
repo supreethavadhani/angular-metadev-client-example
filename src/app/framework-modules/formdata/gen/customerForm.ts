@@ -60,8 +60,24 @@ export class CustomerForm extends Form {
 		,controlType: 'Input'
 		,label: 'Prefered Name '
 		,valueType: 0
-		,errorId: 'invalidName'
-		,maxLength: 150
+		,errorId: 'invalidText'
+		,maxLength: 1000
+	};
+	phone:Field = {
+		name:'phone'
+		,controlType: 'Input'
+		,label: 'Phone Name '
+		,valueType: 0
+		,errorId: 'invalidText'
+		,maxLength: 1000
+	};
+	university:Field = {
+		name:'university'
+		,controlType: 'Input'
+		,label: 'University Name '
+		,valueType: 0
+		,errorId: 'invalidText'
+		,maxLength: 1000
 	};
 
 	public static getInstance(): CustomerForm {
@@ -83,8 +99,12 @@ export class CustomerForm extends Form {
 		this.fields.set('addressLine1', this.addressLine1);
 		this.controls.set('gender', [Validators.required, Validators.maxLength(1000)]);
 		this.fields.set('gender', this.gender);
-		this.controls.set('prefferedName', [Validators.maxLength(150)]);
+		this.controls.set('prefferedName', [Validators.maxLength(1000)]);
 		this.fields.set('prefferedName', this.prefferedName);
+		this.controls.set('phone', [Validators.maxLength(1000)]);
+		this.fields.set('phone', this.phone);
+		this.controls.set('university', [Validators.maxLength(1000)]);
+		this.fields.set('university', this.university);
 		this.opsAllowed = {create: true, filter: true, get: true};
 		this.listFields = ['gender'];
 		this.keyFields = ["customerId"];
@@ -101,11 +121,11 @@ export class CustomerFd extends FormData {
 		super(form, sa);
 	}
 
-	setFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' | 'gender' | 'prefferedName', value: string | number | boolean | null ): void {
+	setFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' | 'gender' | 'prefferedName' | 'phone' | 'university', value: string | number | boolean | null ): void {
 		super.setFieldValue(name, value);
 	}
 
-	getFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' | 'gender' | 'prefferedName' ): string | number | boolean | null {
+	getFieldValue(name: 'customerId' | 'name' | 'email' | 'addressLine1' | 'gender' | 'prefferedName' | 'phone' | 'university' ): string | number | boolean | null {
 		return super.getFieldValue(name);
 	}
 }
@@ -113,7 +133,9 @@ export class CustomerFd extends FormData {
 
 export interface CustomerVo extends Vo {
 	gender?: string, 
+	phone?: string, 
 	prefferedName?: string, 
+	university?: string, 
 	customerId?: number, 
 	name?: string, 
 	addressLine1?: string, 

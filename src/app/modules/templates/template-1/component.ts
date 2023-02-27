@@ -1,12 +1,14 @@
 import {
     Component, Input,
   } from '@angular/core';
-import { FormData } from 'mv-core';
-
+import { FormData, MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
   
   @Component({
+    standalone: true,
     selector: 'app-template-one',
     templateUrl: './component.html',
+    imports:[MVClientCoreAppModule,MVComponentsModule],
+    exportAs:"TemplateOneComponent",
     styleUrls: []
   })
   
