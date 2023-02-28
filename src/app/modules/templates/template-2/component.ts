@@ -1,5 +1,5 @@
 import {
-    Component, Input, OnInit, ViewChild,
+    Component, Input, ViewChild,
   } from '@angular/core';
 import { 
     FilterRequest, FormData, MvTableComponent, ServiceAgent, TableMetaData, MVClientCoreAppModule, MVComponentsModule 
