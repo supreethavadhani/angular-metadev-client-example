@@ -60,24 +60,25 @@ export class CustomerForm extends Form {
 		,controlType: 'Input'
 		,label: 'Prefered Name '
 		,valueType: 0
-		,errorId: 'invalidText'
-		,maxLength: 1000
+		,errorId: 'invalidName'
+		,maxLength: 150
 	};
 	phone:Field = {
 		name:'phone'
 		,controlType: 'Input'
 		,label: 'Phone Name '
 		,valueType: 0
-		,errorId: 'invalidText'
-		,maxLength: 1000
+		,errorId: 'invalidPhone'
+		,minLength: 10
+		,maxLength: 12
 	};
 	university:Field = {
 		name:'university'
 		,controlType: 'Input'
 		,label: 'University Name '
 		,valueType: 0
-		,errorId: 'invalidText'
-		,maxLength: 1000
+		,errorId: 'invalidName'
+		,maxLength: 150
 	};
 
 	public static getInstance(): CustomerForm {
@@ -99,11 +100,11 @@ export class CustomerForm extends Form {
 		this.fields.set('addressLine1', this.addressLine1);
 		this.controls.set('gender', [Validators.required, Validators.maxLength(1000)]);
 		this.fields.set('gender', this.gender);
-		this.controls.set('prefferedName', [Validators.maxLength(1000)]);
+		this.controls.set('prefferedName', [Validators.maxLength(150)]);
 		this.fields.set('prefferedName', this.prefferedName);
-		this.controls.set('phone', [Validators.maxLength(1000)]);
+		this.controls.set('phone', [Validators.minLength(10), Validators.maxLength(12), Validators.pattern('[1-9][0-9]*')]);
 		this.fields.set('phone', this.phone);
-		this.controls.set('university', [Validators.maxLength(1000)]);
+		this.controls.set('university', [Validators.maxLength(150)]);
 		this.fields.set('university', this.university);
 		this.opsAllowed = {create: true, filter: true, get: true};
 		this.listFields = ['gender'];
