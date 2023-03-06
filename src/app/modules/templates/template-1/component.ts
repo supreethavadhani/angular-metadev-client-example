@@ -1,28 +1,41 @@
 import {
-    Component, Input,
-  } from '@angular/core';
-import { FormData } from 'mv-core';
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+import {
+  FormData,
+  MVClientCoreAppModule,
+  MVComponentsModule,
+  ServiceAgent
+} from 'mv-core';
+import {
+  ConstantsService
+} from 'src/app/services/constantsService';
 
-  
-  @Component({
-    selector: 'app-template-one',
-    templateUrl: './component.html',
-    styleUrls: []
-  })
-  
-  export class TemplateOneComponent {
-    @Input() fd: FormData;
-    constructor(){
-    }
+@Component({
+  standalone: true,
+  selector: 'app-template-one',
+  templateUrl: './component.html',
+  imports: [MVClientCoreAppModule, MVComponentsModule],
+  exportAs: "TemplateOneComponent"
+})
 
-    saveForm(){
-      this.fd.saveAsNew().subscribe(
-        data=>{
-          console.log("saved")
-        },
-        err=>{
-          console.log(err)
-        }
-      )
-    }
-    }
+export class TemplateOneComponent implements OnInit {
+  @Input() formName: any;
+  public fd1: FormData
+  constructor(public sa: ServiceAgent) {}
+  ngOnInit() {
+    this.fd1 = ConstantsService.getFormFd(this.formName, this.sa)
+  }
+  saveForm() {
+    this.fd1.saveAsNew().subscribe(
+      data => {
+        console.log("saved")
+      },
+      err => {
+        console.log(err)
+      }
+    )
+  }
+}
