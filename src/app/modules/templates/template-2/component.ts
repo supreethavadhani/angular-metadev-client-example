@@ -1,9 +1,10 @@
 import {
-    Component, Input, OnInit, ViewChild,
+    Component, Input, ViewChild,
   } from '@angular/core';
-import { FilterRequest, FormData, MvTableComponent, ServiceAgent, TableMetaData } from 'mv-core';
-import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
-  
+import { 
+    FilterRequest, FormData, MvTableComponent, ServiceAgent, TableMetaData, MVClientCoreAppModule, MVComponentsModule 
+  } from 'mv-core';
+
   @Component({
     standalone: true,
     selector: 'app-template-two',
@@ -18,6 +19,7 @@ import { MVClientCoreAppModule, MVComponentsModule } from 'mv-core';
   
     public tableData: TableMetaData;
     public constructor(sa: ServiceAgent) {
+    // for future constructor operations
     }
 
     
