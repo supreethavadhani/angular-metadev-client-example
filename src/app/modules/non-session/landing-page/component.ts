@@ -1,14 +1,14 @@
 import { Component,OnInit,Input,ViewChild,ViewContainerRef,Type,ComponentFactoryResolver} from "@angular/core";
 import { DynamicPanel,GroupPanel } from '../interfaces'
 import { NonSessionComponent } from '../component';
-import { ExampleComponent } from './sample-page/component';
+import { SampleComponent } from './pages/sample-component';
 
 
 /**
  Const to map the screen-component to screen-name to rended the facotry 
  */
 const MENU: { [key: string]:{comp:Type<DynamicPanel>,subTitle?:string}} = {
-    Login: {comp:ExampleComponent },
+    Login: {comp:SampleComponent },
 
 };
 
@@ -16,27 +16,16 @@ const MENU: { [key: string]:{comp:Type<DynamicPanel>,subTitle?:string}} = {
 @Component({
   selector: "app-landing-page",
   templateUrl: "./component.html",
-  styleUrls: ["./component.scss"]
+  styleUrls: []
 })
 export class LandingComponent implements OnInit, GroupPanel {
   @Input() inputData: any;
   @Input() parentPanel: NonSessionComponent;
   menu: { [key: string]: Type<DynamicPanel> };
-  sidenav:boolean = false;
-  displayNames:{}
-  cardHeader:any;
-  /**
-    container for the child page loaded from the seconday navbar 
-   */
-
   @ViewChild("secondaryContainer", {static:true,read: ViewContainerRef }) container: ViewContainerRef;
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
   
   ngOnInit() {
-    this.cardHeader="Students";
-    /**
-     Navigate to Student List page on app load
-     */
     this.navigate("Login", {});
   }
 
