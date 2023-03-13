@@ -1,16 +1,17 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { RouterService } from './services/routerService';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [RouterService]
+  providers: []
 })
-export class AppComponent implements AfterViewInit {
-  constructor(private routerService: RouterService) {
+export class AppComponent implements AfterViewInit{
+  constructor( private router: Router) {
   }
-  ngAfterViewInit() {
-    this.routerService.openNonSession();
+  ngAfterViewInit(): void {
+    this.router.navigate(['employee'])
   }
 }

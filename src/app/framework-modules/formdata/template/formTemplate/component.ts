@@ -3,6 +3,7 @@ import {
   Input,
   OnInit,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   FormData,
   MVClientCoreAppModule,
@@ -24,7 +25,7 @@ export class formTemplateComponent implements OnInit {
   @Input() formName: any;
   public fd: FormData;
   public formHeader:string;
-  constructor(public sa: ServiceAgent) {}
+  constructor(public sa: ServiceAgent, public router: Router) {}
   ngOnInit() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)
     this.formHeader = this.fd.form.getName();
@@ -32,14 +33,15 @@ export class formTemplateComponent implements OnInit {
  create() {
     this.fd.saveAsNew().subscribe(
       data => {
-        console.log("saved")
+        console.log(data)
+        console.log(this.fd.extractKeyFields())
+        // this.router.navigate(['customer',this.fd.extractKeyFields()])
       },
       err => {
         console.log(err)
       }
     )
   }    
- cancel() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
+  async cancel() {
   }
 }
