@@ -15,13 +15,13 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
 
 @Component({
   standalone: true,
-  selector: 'app-form-template',
+  selector: 'app-table-template',
   templateUrl: './component.html',
   imports: [MVClientCoreAppModule, MVComponentsModule],
-  exportAs: "formTemplateComponent"
+  exportAs: "tableTemplateOneComponent"
 })
 
-export class formTemplateComponent implements OnInit {
+export class tableTemplateOneComponent implements OnInit {
   @Input() formName: any;
   public fd: FormData;
   public formHeader:string;

@@ -8,10 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   providers: []
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent {
   constructor( private router: Router) {
-  }
-  ngAfterViewInit(): void {
-    this.router.navigate(['employee'])
   }
 }

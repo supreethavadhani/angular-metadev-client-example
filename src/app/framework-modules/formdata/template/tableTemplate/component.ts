@@ -2,7 +2,7 @@ import {
   AfterViewInit,
     Component, Input, OnInit, ViewChild,
   } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { 
     FilterRequest, FormData, MvTableComponent, ServiceAgent, TableMetaData, MVClientCoreAppModule, MVComponentsModule, FormService 
   } from 'mv-core';
@@ -22,15 +22,14 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
 
     public fd: FormData
     public tableData: TableMetaData;
-    public formHeader: string
+public formHeader: string
 
-    constructor(public sa: ServiceAgent,   private route: ActivatedRoute) {}
+    constructor(public sa: ServiceAgent) {}
     
     async ngOnInit() {
       this.fd = await FormService.getFormFd(this.formName,this.sa,allForms)
       this.fetchData();
-      this.formHeader = this.fd.form.getName();
-      console.log(this.route.snapshot.paramMap)
+     this.formHeader = this.fd.form.getName();
     }
     fetchData() {
   

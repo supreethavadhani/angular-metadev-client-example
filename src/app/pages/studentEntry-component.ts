@@ -7,18 +7,18 @@ import { formTemplateComponent } from 'src/app/framework-modules/formdata/templa
 
 @Component({
   standalone: true,
-  selector:'app-customer-entry',
+  selector:'app-student-entry',
   template: `<app-form-template [formName]= "form"></app-form-template>`,
   imports:[formTemplateComponent],
   styleUrls: []
 })
 
-export class customerEntryComponent {
+export class studentEntryComponent {
   @Input() inputData: any;
 
   public form
   
   constructor() {
-    this.form = "customer"
+    this.form = "student"
   }
 }

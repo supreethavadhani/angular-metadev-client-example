@@ -4,17 +4,16 @@ import {
 } from '@angular/core';
 
 import { formTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
-import { tableTemplateComponent } from 'src/app/framework-modules/formdata/template/tableTemplate/component';
 
 @Component({
   standalone: true,
-  selector:'app-sample',
+  selector:'app-empolyee-entry',
   template: `<app-form-template [formName]= "form"></app-form-template>`,
-  imports:[formTemplateComponent,tableTemplateComponent],
+  imports:[formTemplateComponent],
   styleUrls: []
 })
 
-export class SampleComponent {
+export class empolyeeEntryComponent {
   @Input() inputData: any;
 
   public form
