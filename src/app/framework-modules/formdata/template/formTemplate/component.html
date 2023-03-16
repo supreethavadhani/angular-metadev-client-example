@@ -1,7 +1,9 @@
-<mat-card class ="col-md-8" style="margin: auto">
-    <h2> {{formHeader}}</h2>
-</mat-card><div  class ="col-md-8" style="margin: auto; padding-top:3rem"> 
-	<app-mv-form-generator [formData]="fd"></app-mv-form-generator>
-</div><div style="text-align: center;padding-top: 2rem;margin:2rem"><app-mv-primary-button name= "Save Data" (click)=create()> </app-mv-primary-button> 
-<app-mv-primary-button name= "Cancel" (click)=cancel()> </app-mv-primary-button> 
-</div>
+    <mat-card class="col-md-10" style="margin: auto; margin-top: 2rem;box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"> 
+     <div style="margin: 2rem;text-align:center;">
+        <h2 style="color:#004faa"> {{formHeader}}</h2>
+        <hr>
+    </div>	<app-mv-form-generator [formData]="fd"></app-mv-form-generator>
+<div style="text-align: center;padding-top: 2rem;"> 
+    <app-mv-primary-button name= "Save" (click)=createSave()> </app-mv-primary-button> 
+    <app-mv-secondary-button name= "Navigate" (click)=navigateNavigate()> </app-mv-secondary-button>
+</div></mat-card>

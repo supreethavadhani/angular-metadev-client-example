@@ -9,14 +9,14 @@ import {
 import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/framework-modules/formdata/gen/allForms";
   @Component({
     standalone: true,
-    selector: 'app-table-template',
+    selector: 'app-two-table-template',
     templateUrl: './component.html',
     imports:[MVClientCoreAppModule,MVComponentsModule],
-    exportAs:"tableTemplateComponent",
+    exportAs:"tableTemplateWithTwoButtonComponent",
     styleUrls: []
   })
   
-  export class tableTemplateComponent implements OnInit{
+  export class tableTemplateWithTwoButtonComponent implements OnInit{
     @ViewChild("gridTable", { static: false }) gtable: MvTableComponent;
     @Input() formName: any;
 
@@ -48,16 +48,10 @@ public formHeader: string
       error: msg => console.error("Error from server ", msg)
      });
     }   
- navigateNavigatetoCustomerEntry() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Customer Entry" )[0]['routeTo']])  }   
- navigateNavigatetoEmployeeEntry() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Employee Entry" )[0]['routeTo']])  }   
- navigateNavigatetoCustomerView() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Customer View" )[0]['routeTo']])  }   
  navigateNavigatetoEmployeeView() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Employee View" )[0]['routeTo']])  }
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Employee View" )[0]['routeTo']])  }   
+ navigateNavigatetoCustomerView() {
+    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Customer View" )[0]['routeTo']])  }
 }

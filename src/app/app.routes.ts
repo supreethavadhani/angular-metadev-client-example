@@ -1,24 +1,27 @@
-import { RouterModule, Routes } from "@angular/router";
-import { customerEntryComponent } from "./pages/customerEntry-component";
+
+import { employeeAndCustomerViewComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/employeeAndCustomerView-component";
+import { studentViewComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/studentView-component";
+import { customerEntryComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/customerEntry-component";
+import { studentEntryComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/studentEntry-component";
+import { employeeEntryComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/employeeEntry-component";
+import { employeeViewComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/employeeView-component";
+import { customerViewComponent } from "/Users/supreethavadhani/workspace/metadev-client-example/src/app/pages/customerView-component";import { RouterModule, Routes } from "@angular/router";
+
 import { NgModule } from "@angular/core";
-import { empolyeeViewComponent } from "./pages/employeeView-component";
-import { customerViewComponent } from "./pages/customerView-component";
-import { empolyeeEntryComponent } from "./pages/employeeEntry-component";
-import { studentEntryComponent } from "./pages/studentEntry-component";
-import { studentViewComponent } from "./pages/studentView-component";
+
 
 const routes: Routes = [
-    {path: 'employee-view', component: empolyeeViewComponent},
-    {path: 'customer-view', component: customerViewComponent},
-    {path: 'employee-add', component: empolyeeEntryComponent},
-    {path: 'customer-add', component: customerEntryComponent},
-    {path: 'student-add', component: studentEntryComponent},
-    {path: 'student-view', component: studentViewComponent}
-  ];
+    { path: 'customerView', component: customerViewComponent},
+    { path: 'employeeView', component: employeeViewComponent},
+    { path: 'employeeEntry', component: employeeEntryComponent},
+    { path: 'studentEntry', component: studentEntryComponent},
+    { path: 'customerEntry', component: customerEntryComponent},
+    { path: 'studentView', component: studentViewComponent},
+    { path: 'employeeAndCustomerView', component: employeeAndCustomerViewComponent},
+];
 
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
   export class AppRouting { }
-  

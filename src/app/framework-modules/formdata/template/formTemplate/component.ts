@@ -23,24 +23,24 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
 
 export class formTemplateComponent implements OnInit {
   @Input() formName: any;
+@Input() routes?: [];
   public fd: FormData;
   public formHeader:string;
-  constructor(public sa: ServiceAgent) {}
+  constructor(public sa: ServiceAgent, public router: Router) {}
   ngOnInit() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)
-    this.formHeader = this.fd.form.getName();
+    this.formHeader = this.fd.form.getName().toUpperCase();
   } 
- create() {
+ createSave() {
     this.fd.saveAsNew().subscribe(
       data => {
         console.log("saved")
-      },
-      err => {
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Save" )[0]['routeTo']])
+    },       err => {
         console.log(err)
-      }
-    )
-  }    
- cancel() {
+      });   
+    }   
+ navigateNavigate() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-  }
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate" )[0]['routeTo']])  }
 }

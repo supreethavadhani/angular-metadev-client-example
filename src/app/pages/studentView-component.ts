@@ -8,7 +8,7 @@ import { tableTemplateComponent } from 'src/app/framework-modules/formdata/templ
 @Component({
   standalone: true,
   selector:'app-student-view',
-  template: `<app-table-template [formName]= "form"></app-table-template>`,
+  template: `<app-table-template [formName]= "form"    [routes]=routes></app-table-template>`,
   imports:[tableTemplateComponent],
   styleUrls: []
 })
@@ -16,9 +16,17 @@ import { tableTemplateComponent } from 'src/app/framework-modules/formdata/templ
 export class studentViewComponent {
   @Input() inputData: any;
 
-  public form
-  
+  public form;
+    public routes;  
   constructor() {
-    this.form = "student"
+    this.form = "student";
+    this.routes = [    {
+      "name":"Save",
+      "routeTo":"customerView"
+    },    {
+      "name":"Navigate",
+      "routeTo":"customerView"
+    },
+    ]
   }
 }

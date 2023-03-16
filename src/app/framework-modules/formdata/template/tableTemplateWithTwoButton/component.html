@@ -1,0 +1,8 @@
+    <mat-card class="col-md-10" style="margin: auto; margin-top: 2rem;box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"> 
+     <div style="margin: 2rem;text-align:center;">
+        <h2 style="color:#004faa"> {{formHeader}}</h2>
+        <hr>
+    </div> <app-mv-table style="width:1000px;" data [tableGridData]="tableData" #gridTable></app-mv-table><div style="text-align: center;padding-top: 2rem;"> 
+    <app-mv-primary-button name= "Navigate to Employee View" (click)=navigateNavigatetoEmployeeView()> </app-mv-primary-button> 
+    <app-mv-secondary-button name= "Navigate to Customer View" (click)=navigateNavigatetoCustomerView()> </app-mv-secondary-button>
+</div></mat-card>

@@ -8,17 +8,25 @@ import { formTemplateComponent } from 'src/app/framework-modules/formdata/templa
 @Component({
   standalone: true,
   selector:'app-empolyee-entry',
-  template: `<app-form-template [formName]= "form"></app-form-template>`,
+  template: `<app-form-template [formName]= "form"    [routes]=routes></app-form-template>`,
   imports:[formTemplateComponent],
   styleUrls: []
 })
 
-export class empolyeeEntryComponent {
+export class employeeEntryComponent {
   @Input() inputData: any;
 
-  public form
-  
+  public form;
+    public routes;  
   constructor() {
-    this.form = "employee"
+    this.form = "employee";
+    this.routes = [    {
+      "name":"Save",
+      "routeTo":"employeeView"
+    },    {
+      "name":"Navigate",
+      "routeTo":"employeeView"
+    },
+    ]
   }
 }
