@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
     Component, Input, OnInit, ViewChild,
   } from '@angular/core';
 import { Router } from '@angular/router';
