@@ -18,7 +18,7 @@ export class AppComponent {
       },
       {
         "name":"customer add",
-        "routeTo":"customerEntry"
+        "routeTo":"customerAdd"
       },
       {
         "name":"employee entry",
