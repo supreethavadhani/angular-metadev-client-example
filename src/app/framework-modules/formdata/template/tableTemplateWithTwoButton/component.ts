@@ -16,7 +16,7 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
     styleUrls: []
   })
   
-  export class tableTemplateWithTwoButtonComponent implements OnInit{
+  export class TableTemplateWithTwoButtonComponent implements OnInit{
     @ViewChild("gridTable", { static: false }) gtable: MvTableComponent;
     @Input() formName: any;
 

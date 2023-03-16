@@ -3,17 +3,17 @@ import {
   Input
 } from '@angular/core';
 
-import { tableTemplateWithTwoButtonComponent } from 'src/app/framework-modules/formdata/template/tableTemplateWithTwoButton/component';
+import { TableTemplateWithTwoButtonComponent } from 'src/app/framework-modules/formdata/template/tableTemplateWithTwoButton/component';
 
 @Component({
   standalone: true,
   selector:'app-emp-cust-view',
   template: `<app-two-table-template [formName]= "form"    [routes]=routes></app-two-table-template>`,
-  imports:[tableTemplateWithTwoButtonComponent],
+  imports:[TableTemplateWithTwoButtonComponent],
   styleUrls: []
 })
 
-export class employeeAndCustomerViewComponent {
+export class EmployeeAndCustomerViewComponent {
   @Input() inputData: any;
 
   public form;

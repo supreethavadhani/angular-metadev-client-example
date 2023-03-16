@@ -3,17 +3,17 @@ import {
   Input
 } from '@angular/core';
 
-import { formTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
+import { FormTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
 
 @Component({
   standalone: true,
   selector:'app-empolyee-entry',
   template: `<app-form-template [formName]= "form"    [routes]=routes></app-form-template>`,
-  imports:[formTemplateComponent],
+  imports:[FormTemplateComponent],
   styleUrls: []
 })
 
-export class employeeEntryComponent {
+export class EmployeeEntryComponent {
   @Input() inputData: any;
 
   public form;

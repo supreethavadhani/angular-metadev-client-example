@@ -1,7 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  MVClientCoreAppModule } from 'mv-core'
 
 @Component({
   selector: 'app-root',

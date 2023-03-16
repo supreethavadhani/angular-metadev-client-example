@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
     Component, Input, OnInit, ViewChild,
   } from '@angular/core';
 import { Router } from '@angular/router';
@@ -16,7 +15,7 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
     styleUrls: []
   })
   
-  export class tableTemplateComponent implements OnInit{
+  export class TableTemplateComponent implements OnInit{
     @ViewChild("gridTable", { static: false }) gtable: MvTableComponent;
     @Input() formName: any;
 
