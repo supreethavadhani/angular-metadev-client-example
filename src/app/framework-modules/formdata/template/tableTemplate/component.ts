@@ -2,6 +2,7 @@ import {
   AfterViewInit,
     Component, Input, OnInit, ViewChild,
   } from '@angular/core';
+import { Router } from '@angular/router';
 import { 
     FilterRequest, FormData, MvTableComponent, ServiceAgent, TableMetaData, MVClientCoreAppModule, MVComponentsModule, FormService 
   } from 'mv-core';
@@ -15,20 +16,22 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
     styleUrls: []
   })
   
-  export class tableTemplateComponent implements AfterViewInit{
+  export class tableTemplateComponent implements OnInit{
     @ViewChild("gridTable", { static: false }) gtable: MvTableComponent;
     @Input() formName: any;
 
-    public fd: FormData
+
+  @Input() routes?: [];
+public fd: FormData
     public tableData: TableMetaData;
 public formHeader: string
 
-    constructor(public sa: ServiceAgent) {}
+    constructor(public sa: ServiceAgent, public router: Router) {}
     
-    ngAfterViewInit(): void {
-      this.fd = FormService.getFormFd(this.formName,this.sa,allForms)
+    async ngOnInit() {
+      this.fd = await FormService.getFormFd(this.formName,this.sa,allForms)
       this.fetchData();
-     this.formHeader = this.fd.form.getName();
+     this.formHeader = this.fd.form.getName().toUpperCase();
     }
     fetchData() {
   
@@ -44,5 +47,8 @@ public formHeader: string
       },
       error: msg => console.error("Error from server ", msg)
      });
-    }
+    }   
+ navigateAddanewRecord() {
+    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Add a new Record" )[0]['routeTo']])  }
 }

@@ -63,6 +63,7 @@ export class EmployeeForm extends Form {
 
 	constructor() {
 		super();
+		this.serveGuests = true;
 		this.fields = new Map();
 		this.controls = new Map();
 		this.controls.set('employeeId', [Validators.min(-1), Validators.max(9999999999999)]);

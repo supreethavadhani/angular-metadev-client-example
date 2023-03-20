@@ -1,16 +1,22 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { RouterService } from './services/routerService';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { navMenu } from './app.menu';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [RouterService]
+  providers: []
 })
-export class AppComponent implements AfterViewInit {
-  constructor(private routerService: RouterService) {
+export class AppComponent {
+  public navMenu;
+  public appName = "Customer Management ERP";
+  constructor( private router: Router) {
+    this.navMenu = navMenu 
+    this.router.navigate(['customerView']);
   }
-  ngAfterViewInit() {
-    this.routerService.openNonSession();
+
+  public routeTo($event) {
+    this.router.navigate([$event])
   }
 }
