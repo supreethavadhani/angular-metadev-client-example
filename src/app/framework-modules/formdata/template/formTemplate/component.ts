@@ -21,7 +21,7 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
   exportAs: "formTemplateComponent"
 })
 
-export class FormTemplateComponent implements OnInit {
+export class formTemplateComponent implements OnInit {
   @Input() formName: any;
 @Input() routes?: [];
   public fd: FormData;

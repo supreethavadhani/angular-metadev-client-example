@@ -3,29 +3,29 @@ import {
   Input
 } from '@angular/core';
 
-import { FormTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
+import { formTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
 
 @Component({
   standalone: true,
-  selector:'app-student-entry',
+  selector:'app-order-entry',
   template: `<app-form-template [formName]= "form"    [routes]=routes></app-form-template>`,
-  imports:[FormTemplateComponent],
+  imports:[formTemplateComponent],
   styleUrls: []
 })
 
-export class StudentEntryComponent {
+export class orderEntryComponent {
   @Input() inputData: any;
 
   public form;
     public routes;  
   constructor() {
-    this.form = "student";
+    this.form = "order";
     this.routes = [    {
       "name":"Save",
-      "routeTo":"customerView"
+      "routeTo":"orderView"
     },    {
       "name":"Navigate",
-      "routeTo":"customerView"
+      "routeTo":"orderView"
     },
     ]
   }

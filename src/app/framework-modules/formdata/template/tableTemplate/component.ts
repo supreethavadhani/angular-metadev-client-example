@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
     Component, Input, OnInit, ViewChild,
   } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,7 +16,7 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
     styleUrls: []
   })
   
-  export class TableTemplateComponent implements OnInit{
+  export class tableTemplateComponent implements OnInit{
     @ViewChild("gridTable", { static: false }) gtable: MvTableComponent;
     @Input() formName: any;
 
@@ -47,16 +48,7 @@ public formHeader: string
       error: msg => console.error("Error from server ", msg)
      });
     }   
- navigateNavigatetoCustomerEntry() {
+ navigateAddanewRecord() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Customer Entry" )[0]['routeTo']])  }   
- navigateNavigatetoEmployeeEntry() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Employee Entry" )[0]['routeTo']])  }   
- navigateNavigatetoCustomerView() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Customer View" )[0]['routeTo']])  }   
- navigateNavigatetoEmployeeView() {
-    this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Navigate to Employee View" )[0]['routeTo']])  }
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Add a new Record" )[0]['routeTo']])  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { navMenu } from './app.menu';
 
 @Component({
   selector: 'app-root',
@@ -11,19 +12,11 @@ export class AppComponent {
   public navMenu;
   public appName = "Customer Management ERP";
   constructor( private router: Router) {
-    this.navMenu = [
-      {
-        "name":"customer entry",
-        "routeTo":"customerEntry"
-      },
-      {
-        "name":"customer add",
-        "routeTo":"customerAdd"
-      },
-      {
-        "name":"employee entry",
-        "routeTo":"customerEntry"
-      }
-    ]
+    this.navMenu = navMenu 
+    this.router.navigate(['customerView']);
+  }
+
+  public routeTo($event) {
+    this.router.navigate([$event])
   }
 }

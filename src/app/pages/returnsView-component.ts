@@ -7,22 +7,22 @@ import { tableTemplateComponent } from 'src/app/framework-modules/formdata/templ
 
 @Component({
   standalone: true,
-  selector:'app-empolyee-view',
+  selector:'app-return-view',
   template: `<app-table-template [formName]= "form"    [routes]=routes></app-table-template>`,
   imports:[tableTemplateComponent],
   styleUrls: []
 })
 
-export class employeeViewComponent {
+export class returnsViewComponent {
   @Input() inputData: any;
 
   public form;
     public routes;  
   constructor() {
-    this.form = "employee";
+    this.form = "returns";
     this.routes = [    {
       "name":"Add a new Record",
-      "routeTo":"employeeEntry"
+      "routeTo":"returnsEntry"
     },
     ]
   }

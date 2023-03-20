@@ -3,8 +3,5 @@
         <h2 style="color:#004faa"> {{formHeader}}</h2>
         <hr>
     </div> <app-mv-table style="width:1000px;" data [tableGridData]="tableData" #gridTable></app-mv-table><div style="text-align: center;padding-top: 2rem;"> 
-    <app-mv-secondary-button name= "Navigate to Customer Entry" (click)=navigateNavigatetoCustomerEntry()> </app-mv-secondary-button> 
-    <app-mv-secondary-button name= "Navigate to Employee Entry" (click)=navigateNavigatetoEmployeeEntry()> </app-mv-secondary-button> 
-    <app-mv-secondary-button name= "Navigate to Customer View" (click)=navigateNavigatetoCustomerView()> </app-mv-secondary-button> 
-    <app-mv-secondary-button name= "Navigate to Employee View" (click)=navigateNavigatetoEmployeeView()> </app-mv-secondary-button>
+    <app-mv-primary-button name= "Add a new Record" (click)=navigateAddanewRecord()> </app-mv-primary-button>
 </div></mat-card>

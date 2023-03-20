@@ -2,7 +2,7 @@
     <app-mv-toolbar [appName]="appName"></app-mv-toolbar>
     <div class="row">
       <div class="col-md-2">
-        <app-mv-sidenav [navMenu]="navMenu"></app-mv-sidenav>
+        <app-mv-sidenav [navMenu]="navMenu" (emitRoute)="routeTo($event)"></app-mv-sidenav>
         </div>
       <div class="col-md-10">
         <router-outlet></router-outlet>

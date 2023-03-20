@@ -3,17 +3,17 @@ import {
   Input
 } from '@angular/core';
 
-import { FormTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
+import { formTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
 
 @Component({
   standalone: true,
   selector:'app-customer-entry',
   template: `<app-form-template [formName]= "form"    [routes]=routes></app-form-template>`,
-  imports:[FormTemplateComponent],
+  imports:[formTemplateComponent],
   styleUrls: []
 })
 
-export class CustomerEntryComponent {
+export class customerEntryComponent {
   @Input() inputData: any;
 
   public form;
