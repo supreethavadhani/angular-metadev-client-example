@@ -2,6 +2,6 @@
      <div style="margin: 2rem;text-align:center;">
         <h2 style="color:#004faa"> {{formHeader}}</h2>
         <hr>
-    </div> <app-mv-table style="width:1000px;" data [tableGridData]="tableData" #gridTable></app-mv-table><div style="text-align: center;padding-top: 2rem;"> 
-    <app-mv-primary-button name= "Add a new Record" (click)=navigateAddanewRecord()> </app-mv-primary-button>
+    </div> <app-mv-table (editAction)="editClicked($event)" style="width:1000px;" data [tableGridData]="tableData" #gridTable></app-mv-table><div style="text-align: center;padding-top: 2rem;"> 
+    <app-mv-primary-button name= "add new record" (click)=navigateaddnewrecord()> </app-mv-primary-button>
 </div></mat-card>

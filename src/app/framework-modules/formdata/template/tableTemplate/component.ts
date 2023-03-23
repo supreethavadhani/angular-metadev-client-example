@@ -22,6 +22,7 @@ import { allForms } from "/Users/supreethavadhani/workspace/metadev-client-examp
 
 
   @Input() routes?: [];
+@Input() editRoute: string
 public fd: FormData
     public tableData: TableMetaData;
 public formHeader: string
@@ -48,7 +49,13 @@ public formHeader: string
       error: msg => console.error("Error from server ", msg)
      });
     }   
- navigateAddanewRecord() {
+ navigateaddnewrecord() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
-        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Add a new Record" )[0]['routeTo']])  }
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "add new record" )[0]['routeTo']])  }  
+editClicked($event) {
+    let primaryKey = Object.keys(this.fd.extractKeyFields())[0]
+    let routeKey = {}
+    routeKey[primaryKey] = this.tableData.data[$event][primaryKey]
+    this.router.navigate([this.editRoute,routeKey])
+  }
 }

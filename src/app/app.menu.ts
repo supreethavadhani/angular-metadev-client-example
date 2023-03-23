@@ -1,21 +1,4 @@
-export const navMenu = [    {
-        "name":"Customers",
-        "routeTo":"customerView"
-    },
-    {
-        "name":"",
-        "routeTo":"shipmentView"
-    },
-    {
-        "name":"Employees",
-        "routeTo":"employeeView"
-    },
-    {
-        "name":"Returns",
-        "routeTo":"returnsView"
-    },
-    {
-        "name":"Orders",
-        "routeTo":"orderView"
-    },
-]
+export const navMenu = [ 
+{
+    "name":"customers","routeTo":"customerList"
+  },]

@@ -1,32 +1,40 @@
 import {
   Component,
-  Input
-} from '@angular/core';
-
-import { formTemplateComponent } from 'src/app/framework-modules/formdata/template/formTemplate/component';
+  Input,
+OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EntryPageComponent } from 'src/app/framework-modules/formdata/template/EntryPage/component';
 
 @Component({
   standalone: true,
   selector:'app-customer-entry',
-  template: `<app-form-template [formName]= "form"    [routes]=routes></app-form-template>`,
-  imports:[formTemplateComponent],
+  template: `<app-entry-page [formName]= "form"     [routes]=routes></app-entry-page>`,
+  imports:[EntryPageComponent],
   styleUrls: []
 })
 
-export class customerEntryComponent {
+export class customerEntryComponent implements OnInit{
   @Input() inputData: any;
 
   public form;
     public routes;  
-  constructor() {
-    this.form = "customer";
+  constructor(private route:ActivatedRoute) {
+    this.form = "customerList";
     this.routes = [    {
-      "name":"Save",
-      "routeTo":"customerView"
+      "name":"Save Record",
+      "routeTo":"customerList"
     },    {
-      "name":"Navigate",
-      "routeTo":"customerView"
+      "name":"Navigate Back",
+      "routeTo":"customerList"
     },
     ]
   }
-}
+
+  ngOnInit(): void {
+      this.route.params.subscribe(
+        params=>{
+          console.log(params)
+          this.inputData = params
+        }
+      )
+  }}

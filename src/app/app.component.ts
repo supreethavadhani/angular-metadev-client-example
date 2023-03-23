@@ -13,7 +13,7 @@ export class AppComponent {
   public appName = "Customer Management ERP";
   constructor( private router: Router) {
     this.navMenu = navMenu 
-    this.router.navigate(['customerView']);
+    // this.router.navigate(['customerList']);
   }
 
   public routeTo($event) {
