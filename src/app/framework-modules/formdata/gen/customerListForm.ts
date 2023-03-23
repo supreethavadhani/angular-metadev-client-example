@@ -55,6 +55,7 @@ export class CustomerListForm extends Form {
 
 	constructor() {
 		super();
+		this.serveGuests = true;
 		this.fields = new Map();
 		this.controls = new Map();
 		this.controls.set('customerId', [Validators.max(9999999999999)]);
