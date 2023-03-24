@@ -2,6 +2,7 @@ import { UserForm } from "./userForm";
 import { UserRegistrationForm } from "./userRegistrationForm";
 import { CustomerListForm } from "./customerListForm";
 import { UserContextForm } from "./userContextForm";
+import { VendorsForm } from "./vendorsForm";
 import { OrdersForm } from "./ordersForm";
 
  export const allForms = { 
@@ -9,5 +10,6 @@ import { OrdersForm } from "./ordersForm";
     "userRegistration":UserRegistrationForm,
     "customerList":CustomerListForm,
     "userContext":UserContextForm,
+    "vendors":VendorsForm,
     "orders":OrdersForm,
 }

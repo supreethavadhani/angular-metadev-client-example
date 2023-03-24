@@ -4,4 +4,7 @@ export const navMenu = [
   },
 {
     "name":"Orders","routeTo":"orderList"
+  },
+{
+    "name":"vendors","routeTo":"vendorList"
   },]

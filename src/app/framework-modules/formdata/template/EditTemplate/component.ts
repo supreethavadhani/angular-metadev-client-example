@@ -44,11 +44,11 @@ export class EditTemplateComponent implements OnInit {
     this.fd.save().subscribe(
       data => {
         console.log("saved")
-      },
-      err => {
-							       console.log(err)
-          }); 
- }   
+        this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Save" )[0]['routeTo']])
+    },       err => {
+        console.log(err)
+      });   
+    }   
  navigateCancel() {
     this.fd = FormService.getFormFd(this.formName,this.sa,allForms)  
         this.router.navigate([this.routes.filter(routeTo=> routeTo['name'] == "Cancel" )[0]['routeTo']])  }
